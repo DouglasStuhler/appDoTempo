@@ -7,4 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="azul_dia">#ff0ca5b0</color>
+    <color name="azul_noite">#ff010937</color>
+    <color name="roxo_noite_chuvosa">#ff5d2747</color>
+    <color name="cinza_dia_nublado">#ff3b4344</color>
+    <color name="amarelo_sol">#fffea304</color>
+    <color name="cinza_nuvem">#ffcccccc</color>
+    <color name="branco_mais_claro">#fff5f5f5</color>
 </resources>
