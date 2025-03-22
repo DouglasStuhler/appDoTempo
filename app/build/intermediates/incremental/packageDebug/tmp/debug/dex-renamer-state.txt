@@ -1,4 +1,4 @@
-#Sat Mar 22 16:52:46 BRT 2025
+#Sat Mar 22 17:39:46 BRT 2025
 base.0=/home/douglas/AndroidStudioProjects/appDoTempo/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/home/douglas/AndroidStudioProjects/appDoTempo/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
 base.2=/home/douglas/AndroidStudioProjects/appDoTempo/app/build/intermediates/dex/debug/mergeProjectDexDebug/10/classes.dex

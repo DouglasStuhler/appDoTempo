@@ -20,6 +20,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -51,7 +52,12 @@ fun resumoPrev(
                         width = 2.dp,
                         color = cinza_nuvem,
                         shape = RoundedCornerShape(20.dp)
-                    ),
+                    )
+                    .background(
+                        color = branco_mais_claro,
+                        shape = RoundedCornerShape(20.dp)
+                    )
+                    .padding(10.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ){
                 Text(
@@ -79,6 +85,10 @@ fun resumoPrev(
                     color = cinza_nuvem,
                     shape = RoundedCornerShape(10.dp)
                 )
+                .background(
+                    color = branco_mais_claro,
+                    shape = RoundedCornerShape(10.dp)
+                ),
         ) {
             Spacer(modifier = Modifier.weight(1f))
             Column (
