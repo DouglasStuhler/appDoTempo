@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.douglas.appdotempo.app-mergeDebugResources-54:/values-v16/values-v16.xml",
+            "map": [
+                {
+                    "source": "/home/douglas/.gradle/caches/8.10.2/transforms/5d96698793b536a29a578c2924e7bffe/transformed/appcompat-1.2.0/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    }
+                }
+            ]
+        }
+    ]
+}
