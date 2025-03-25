@@ -24,6 +24,7 @@ import com.douglas.appdotempo.ui.components.labelDiaAtual
 import com.douglas.appdotempo.ui.components.resumoPrev
 import com.douglas.appdotempo.ui.theme.AppDoTempoTheme
 import com.douglas.appdotempo.ui.theme.azul_dia
+import com.douglas.to_dolist.navigation.AppTempoNavHost
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,22 +36,7 @@ class MainActivity : ComponentActivity() {
                     .safeDrawingPadding()
             ){
                 AppDoTempoTheme {
-                    Column (
-                        modifier = Modifier
-                            .background(
-                                brush = Brush.verticalGradient(
-                                    colors = listOf(
-                                        azul_dia,
-                                        Color.White
-                                    ),
-                                    startY = 0f,
-                                    endY = 2000f
-                                )
-                            )
-                    ) {
-                        labelDiaAtual("Uberlândia")
-                        resumoPrev(previsao2)
-                    }
+                    AppTempoNavHost()
                 }
             }
         }

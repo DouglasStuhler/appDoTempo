@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.douglas.appdotempo.app-mergeDebugResources-54:/values-v26/values-v26.xml",
+            "outputFile": "com.douglas.appdotempo.app-mergeDebugResources-62:/values-v26/values-v26.xml",
             "map": [
                 {
-                    "source": "/home/douglas/.gradle/caches/8.10.2/transforms/5d96698793b536a29a578c2924e7bffe/transformed/appcompat-1.2.0/res/values-v26/values-v26.xml",
+                    "source": "/home/douglas/.gradle/caches/8.10.2/transforms/37a29833693e53a548cf470999523037/transformed/appcompat-1.2.0/res/values-v26/values-v26.xml",
                     "from": {
                         "startLines": "2,3,4,8,12,16",
                         "startColumns": "4,4,4,4,4,4",

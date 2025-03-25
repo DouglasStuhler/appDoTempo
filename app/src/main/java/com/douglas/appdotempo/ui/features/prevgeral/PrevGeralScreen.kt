@@ -12,7 +12,14 @@ import com.douglas.appdotempo.ui.components.resumoPrev
 import com.douglas.appdotempo.ui.theme.azul_dia
 
 @Composable
-fun prevGeral(){
+fun prevGeralScreen(
+    navigateToPrevFocused: (id: Long?) -> Unit
+){
+    painelPrevGeral()
+}
+
+@Composable
+fun painelPrevGeral(){
     Column (
         modifier = Modifier
             .background(

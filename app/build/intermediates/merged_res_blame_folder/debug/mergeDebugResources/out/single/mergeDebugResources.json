@@ -1,150 +1,150 @@
 [
     {
-        "merged": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-debug-56:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-main-58:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "com.douglas.appdotempo.app-debug-64:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-debug-56:/drawable_neve.png.flat",
-        "source": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-main-58:/drawable/neve.png"
+        "merged": "com.douglas.appdotempo.app-debug-64:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.douglas.appdotempo.app-debug-56:/drawable_lupa.xml.flat",
-        "source": "com.douglas.appdotempo.app-main-58:/drawable/lupa.xml"
+        "merged": "com.douglas.appdotempo.app-debug-64:/drawable_sol.png.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/drawable/sol.png"
     },
     {
-        "merged": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-debug-56:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-main-58:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "com.douglas.appdotempo.app-debug-64:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-debug-56:/drawable_nuvem.png.flat",
-        "source": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-main-58:/drawable/nuvem.png"
+        "merged": "com.douglas.appdotempo.app-debug-64:/drawable_nublado.png.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/drawable/nublado.png"
     },
     {
-        "merged": "com.douglas.appdotempo.app-debug-56:/drawable_max_temperatura.xml.flat",
-        "source": "com.douglas.appdotempo.app-main-58:/drawable/max_temperatura.xml"
+        "merged": "com.douglas.appdotempo.app-debug-64:/drawable_qualidade_ar.xml.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/drawable/qualidade_ar.xml"
     },
     {
-        "merged": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-debug-56:/drawable_chuva.png.flat",
-        "source": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-main-58:/drawable/chuva.png"
+        "merged": "com.douglas.appdotempo.app-debug-64:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-debug-56:/drawable_nublado.png.flat",
-        "source": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-main-58:/drawable/nublado.png"
+        "merged": "com.douglas.appdotempo.app-debug-64:/xml_data_extraction_rules.xml.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-debug-56:/drawable-mdpi_sunny.xml.flat",
-        "source": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-main-58:/drawable-mdpi/sunny.xml"
+        "merged": "com.douglas.appdotempo.app-debug-64:/drawable_velocidade_vento.xml.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/drawable/velocidade_vento.xml"
     },
     {
-        "merged": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-debug-56:/drawable_sol.png.flat",
-        "source": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-main-58:/drawable/sol.png"
+        "merged": "com.douglas.appdotempo.app-debug-64:/drawable_min_temperatura.xml.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/drawable/min_temperatura.xml"
     },
     {
-        "merged": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-debug-56:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-main-58:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "com.douglas.appdotempo.app-debug-64:/drawable_lupa.xml.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/drawable/lupa.xml"
     },
     {
-        "merged": "com.douglas.appdotempo.app-debug-56:/drawable_excluir.xml.flat",
-        "source": "com.douglas.appdotempo.app-main-58:/drawable/excluir.xml"
+        "merged": "com.douglas.appdotempo.app-debug-64:/mipmap-anydpi_ic_launcher_round.xml.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/mipmap-anydpi/ic_launcher_round.xml"
     },
     {
-        "merged": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-debug-56:/drawable_chuva_trovao.png.flat",
-        "source": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-main-58:/drawable/chuva_trovao.png"
+        "merged": "com.douglas.appdotempo.app-debug-64:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.douglas.appdotempo.app-debug-56:/drawable_prob_chuva.xml.flat",
-        "source": "com.douglas.appdotempo.app-main-58:/drawable/prob_chuva.xml"
+        "merged": "com.douglas.appdotempo.app-debug-64:/drawable_neve.png.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/drawable/neve.png"
     },
     {
-        "merged": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-debug-56:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-main-58:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "com.douglas.appdotempo.app-debug-64:/mipmap-anydpi_ic_launcher.xml.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/mipmap-anydpi/ic_launcher.xml"
     },
     {
-        "merged": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-debug-56:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-main-58:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "com.douglas.appdotempo.app-debug-64:/drawable_nuvem.png.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/drawable/nuvem.png"
     },
     {
-        "merged": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-debug-56:/drawable_lua_nuvem.png.flat",
-        "source": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-main-58:/drawable/lua_nuvem.png"
+        "merged": "com.douglas.appdotempo.app-debug-64:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.douglas.appdotempo.app-debug-56:/drawable_umidade.xml.flat",
-        "source": "com.douglas.appdotempo.app-main-58:/drawable/umidade.xml"
+        "merged": "com.douglas.appdotempo.app-debug-64:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-debug-56:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-main-58:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "com.douglas.appdotempo.app-debug-64:/drawable_trovao.png.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/drawable/trovao.png"
     },
     {
-        "merged": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-debug-56:/drawable_trovao.png.flat",
-        "source": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-main-58:/drawable/trovao.png"
+        "merged": "com.douglas.appdotempo.app-debug-64:/drawable_lua_nuvem.png.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/drawable/lua_nuvem.png"
     },
     {
-        "merged": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-debug-56:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-main-58:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "com.douglas.appdotempo.app-debug-64:/drawable_lua.png.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/drawable/lua.png"
     },
     {
-        "merged": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-debug-56:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-main-58:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "com.douglas.appdotempo.app-debug-64:/drawable_chuva.png.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/drawable/chuva.png"
     },
     {
-        "merged": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-debug-56:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-main-58:/drawable/ic_launcher_foreground.xml"
+        "merged": "com.douglas.appdotempo.app-debug-64:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "com.douglas.appdotempo.app-debug-56:/drawable_qualidade_ar.xml.flat",
-        "source": "com.douglas.appdotempo.app-main-58:/drawable/qualidade_ar.xml"
+        "merged": "com.douglas.appdotempo.app-debug-64:/drawable_max_temperatura.xml.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/drawable/max_temperatura.xml"
     },
     {
-        "merged": "com.douglas.appdotempo.app-debug-56:/drawable_localizacao.xml.flat",
-        "source": "com.douglas.appdotempo.app-main-58:/drawable/localizacao.xml"
+        "merged": "com.douglas.appdotempo.app-debug-64:/drawable_prob_chuva.xml.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/drawable/prob_chuva.xml"
     },
     {
-        "merged": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-debug-56:/xml_data_extraction_rules.xml.flat",
-        "source": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-main-58:/xml/data_extraction_rules.xml"
+        "merged": "com.douglas.appdotempo.app-debug-64:/xml_backup_rules.xml.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/xml/backup_rules.xml"
     },
     {
-        "merged": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-debug-56:/xml_backup_rules.xml.flat",
-        "source": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-main-58:/xml/backup_rules.xml"
+        "merged": "com.douglas.appdotempo.app-debug-64:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-debug-56:/mipmap-anydpi_ic_launcher_round.xml.flat",
-        "source": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-main-58:/mipmap-anydpi/ic_launcher_round.xml"
+        "merged": "com.douglas.appdotempo.app-debug-64:/drawable_chuva_trovao.png.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/drawable/chuva_trovao.png"
     },
     {
-        "merged": "com.douglas.appdotempo.app-debug-56:/drawable_velocidade_vento.xml.flat",
-        "source": "com.douglas.appdotempo.app-main-58:/drawable/velocidade_vento.xml"
+        "merged": "com.douglas.appdotempo.app-debug-64:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-debug-56:/drawable_ic_launcher_background.xml.flat",
-        "source": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-main-58:/drawable/ic_launcher_background.xml"
+        "merged": "com.douglas.appdotempo.app-debug-64:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-debug-56:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-main-58:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "com.douglas.appdotempo.app-debug-64:/drawable_sol_nuvem.png.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/drawable/sol_nuvem.png"
     },
     {
-        "merged": "com.douglas.appdotempo.app-debug-56:/drawable_min_temperatura.xml.flat",
-        "source": "com.douglas.appdotempo.app-main-58:/drawable/min_temperatura.xml"
+        "merged": "com.douglas.appdotempo.app-debug-64:/drawable_umidade.xml.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/drawable/umidade.xml"
     },
     {
-        "merged": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-debug-56:/drawable_lua.png.flat",
-        "source": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-main-58:/drawable/lua.png"
+        "merged": "com.douglas.appdotempo.app-debug-64:/drawable_localizacao.xml.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/drawable/localizacao.xml"
     },
     {
-        "merged": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-debug-56:/mipmap-anydpi_ic_launcher.xml.flat",
-        "source": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-main-58:/mipmap-anydpi/ic_launcher.xml"
+        "merged": "com.douglas.appdotempo.app-debug-64:/drawable_confirmar.xml.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/drawable/confirmar.xml"
     },
     {
-        "merged": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-debug-56:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-main-58:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "com.douglas.appdotempo.app-debug-64:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.douglas.appdotempo.app-debug-56:/drawable_confirmar.xml.flat",
-        "source": "com.douglas.appdotempo.app-main-58:/drawable/confirmar.xml"
+        "merged": "com.douglas.appdotempo.app-debug-64:/drawable-mdpi_sunny.xml.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/drawable-mdpi/sunny.xml"
     },
     {
-        "merged": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-debug-56:/drawable_sol_nuvem.png.flat",
-        "source": "/home/douglas/.gradle/daemon/8.10.2/com.douglas.appdotempo.app-main-58:/drawable/sol_nuvem.png"
+        "merged": "com.douglas.appdotempo.app-debug-64:/drawable_excluir.xml.flat",
+        "source": "com.douglas.appdotempo.app-main-66:/drawable/excluir.xml"
     }
 ]

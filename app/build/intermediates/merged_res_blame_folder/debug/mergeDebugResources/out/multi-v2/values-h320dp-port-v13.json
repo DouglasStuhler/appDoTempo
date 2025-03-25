@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.douglas.appdotempo.app-mergeDebugResources-54:/values-h320dp-port-v13/values-h320dp-port-v13.xml",
+            "outputFile": "com.douglas.appdotempo.app-mergeDebugResources-62:/values-h320dp-port-v13/values-h320dp-port-v13.xml",
             "map": [
                 {
-                    "source": "/home/douglas/.gradle/caches/8.10.2/transforms/46390589a207459410cbf7d532a62642/transformed/material-1.4.0/res/values-h320dp-port-v13/values-h320dp-port-v13.xml",
+                    "source": "/home/douglas/.gradle/caches/8.10.2/transforms/20f15f017ab6951b754b0ec0fd9f0ae2/transformed/material-1.4.0/res/values-h320dp-port-v13/values-h320dp-port-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
