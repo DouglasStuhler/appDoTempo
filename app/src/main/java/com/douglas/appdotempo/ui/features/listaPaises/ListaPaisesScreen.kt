@@ -2,6 +2,7 @@ package com.douglas.appdotempo.ui.features.listaPaises
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -21,6 +22,7 @@ import com.douglas.appdotempo.domain.Pais
 import com.douglas.appdotempo.domain.paises
 import com.douglas.appdotempo.ui.UIEvent
 import com.douglas.appdotempo.ui.theme.AppDoTempoTheme
+import com.douglas.to_dolist.navigation.ListCidadeRoute
 import com.douglas.to_dolist.navigation.ListPaisesRoute
 
 @Composable
@@ -38,7 +40,7 @@ fun ListaPaisesScreen(
             when (uiEvent){
                 is UIEvent.Navigate<*> -> {
                     when (uiEvent.route){
-                        is ListPaisesRoute -> {
+                        is ListCidadeRoute -> {
                             navigateToCidades(viewModel.nomePais)
                         }
                     }
@@ -61,27 +63,38 @@ fun ListaPaises(
     paises: List<Pais>,
     onClick: (ListaPaisesEvents) -> Unit
 ){
-    LazyColumn {
-        itemsIndexed(paises) { index, pais ->
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(10.dp)
-                    .clickable(
-                        onClick = {
-                            onClick(ListaPaisesEvents.onClick(pais.country))
-                        }
-                    ),
-                horizontalArrangement = Arrangement.Center,
+    Column(
+        modifier = Modifier
+            .fillMaxWidth(),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ){
+        Text(
+            text = "Escolha um Pais",
+            fontSize = 35.sp
+        )
+        LazyColumn {
+            itemsIndexed(paises) { index, pais ->
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp)
+                        .clickable(
+                            onClick = {
+                                onClick(ListaPaisesEvents.onClick(pais.country))
+                            }
+                        ),
+                    horizontalArrangement = Arrangement.Center,
 
-            ){
-                Text(
-                    text = pais.country,
-                    fontSize = 25.sp
-                )
+                    ){
+                    Text(
+                        text = pais.country,
+                        fontSize = 25.sp
+                    )
+                }
             }
         }
     }
+
 }
 
 @Composable
