@@ -2,11 +2,15 @@ package com.douglas.appdotempo.ui.features.prevgeral
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import com.douglas.appdotempo.domain.previsao1
 import com.douglas.appdotempo.domain.previsao2
+import com.douglas.appdotempo.domain.previsao3
+import com.douglas.appdotempo.ui.components.cardCarrousel
 import com.douglas.appdotempo.ui.components.labelDiaAtual
 import com.douglas.appdotempo.ui.components.resumoPrev
 import com.douglas.appdotempo.ui.theme.azul_dia
@@ -29,11 +33,13 @@ fun painelPrevGeral(){
                         Color.White
                     ),
                     startY = 0f,
-                    endY = 2000f
+                    endY = 3000f
                 )
             )
+            .fillMaxHeight()
     ) {
         labelDiaAtual("Uberlândia")
         resumoPrev(previsao2)
+        cardCarrousel(listOf(previsao1, previsao2, previsao3, previsao1, previsao2, previsao3, previsao2))
     }
 }

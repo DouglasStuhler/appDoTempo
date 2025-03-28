@@ -1,6 +1,8 @@
 package com.douglas.appdotempo.ui.components
 
+import android.media.Image
 import android.widget.ImageView
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
@@ -48,29 +50,28 @@ fun resumoPrev(
             Column(
                 modifier = Modifier
                     .weight(6f)
-                    .border(
+                    /*.border(
                         width = 2.dp,
                         color = cinza_nuvem,
                         shape = RoundedCornerShape(20.dp)
-                    )
-                    .background(
-                        color = branco_mais_claro,
+                    )*/
+                    /*.background(
+                        color = transparente,
                         shape = RoundedCornerShape(20.dp)
-                    )
+                    )*/
                     .padding(10.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ){
                 Text(
                     text = previsao.tempAtual.toString()+"°",
-                    fontSize = 100.sp
+                    fontSize = 100.sp,
+                    color = branco_mais_claro
                 )
-                Icon(
+                Image(
                     painter = painterResource(id = R.drawable.sol),
-                    contentDescription = "Ensolarado",
+                    contentDescription = "teste",
                     modifier = Modifier
-                        .size(130.dp)
-                        .padding(bottom = 20.dp),
-                    tint = amarelo_sol
+                        .size(100.dp),
                 )
             }
             Spacer(modifier = Modifier.weight(1f))
@@ -80,11 +81,11 @@ fun resumoPrev(
             modifier = Modifier
                 .padding(15.dp, 5.dp, 15.dp, 5.dp)
                 .fillMaxWidth()
-                .border(
+                /*.border(
                     width = 2.dp,
                     color = cinza_nuvem,
                     shape = RoundedCornerShape(10.dp)
-                )
+                )*/
                 .background(
                     color = branco_mais_claro,
                     shape = RoundedCornerShape(10.dp)

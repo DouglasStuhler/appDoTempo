@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="amarelo_sol">#fffea304</color>
-    <color name="azul_dia">#ff0ca5b0</color>
+    <color name="azul_dia">#87cefa</color>
     <color name="azul_noite">#ff010937</color>
     <color name="black">#FF000000</color>
     <color name="branco_mais_claro">#fff5f5f5</color>
