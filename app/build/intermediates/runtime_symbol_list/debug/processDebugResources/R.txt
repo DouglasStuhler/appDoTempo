@@ -1021,6 +1021,7 @@ int color androidx_core_ripple_material_light 0x7f05001c
 int color androidx_core_secondary_text_default_material_light 0x7f05001d
 int color azul_dia 0x7f05001e
 int color azul_noite 0x7f05001f
+int color azul_temp 0x7f0500eb
 int color background_floating_material_dark 0x7f050020
 int color background_floating_material_light 0x7f050021
 int color background_material_dark 0x7f050022
@@ -1223,6 +1224,7 @@ int color tooltip_background_dark 0x7f0500e6
 int color tooltip_background_light 0x7f0500e7
 int color vector_tint_color 0x7f0500e8
 int color vector_tint_theme_color 0x7f0500e9
+int color vermelho_temp 0x7f0500ec
 int color white 0x7f0500ea
 int dimen abc_action_bar_content_inset_material 0x7f060000
 int dimen abc_action_bar_content_inset_with_nav 0x7f060001

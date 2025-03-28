@@ -15,4 +15,6 @@
     <color name="amarelo_sol">#fffea304</color>
     <color name="cinza_nuvem">#ffcccccc</color>
     <color name="branco_mais_claro">#fff5f5f5</color>
+    <color name="vermelho_temp">#fc1723</color>
+    <color name="azul_temp">#4176e1</color>
 </resources>

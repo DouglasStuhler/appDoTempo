@@ -1022,6 +1022,7 @@ color androidx_core_ripple_material_light
 color androidx_core_secondary_text_default_material_light
 color azul_dia
 color azul_noite
+color azul_temp
 color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
@@ -1224,6 +1225,7 @@ color tooltip_background_dark
 color tooltip_background_light
 color vector_tint_color
 color vector_tint_theme_color
+color vermelho_temp
 color white
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav

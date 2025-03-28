@@ -3,6 +3,7 @@ local
 color amarelo_sol
 color azul_dia
 color azul_noite
+color azul_temp
 color black
 color branco_mais_claro
 color cinza_dia_nublado
@@ -13,6 +14,7 @@ color purple_700
 color roxo_noite_chuvosa
 color teal_200
 color teal_700
+color vermelho_temp
 color white
 drawable chuva
 drawable chuva_trovao
