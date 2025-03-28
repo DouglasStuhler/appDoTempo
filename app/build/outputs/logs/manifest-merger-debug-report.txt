@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:2:1-28:12
-INJECTED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:2:1-28:12
-INJECTED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:2:1-28:12
-INJECTED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:2:1-28:12
+ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:2:1-33:12
 MERGED from [androidx.navigation:navigation-common:2.8.0] /home/douglas/.gradle/caches/8.10.2/transforms/36686592c5eb119d992585826ef996af/transformed/navigation-common-2.8.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-runtime:2.8.0] /home/douglas/.gradle/caches/8.10.2/transforms/760d702a0f9e463a1c397a0e02faa5f1/transformed/navigation-runtime-2.8.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common-ktx:2.8.0] /home/douglas/.gradle/caches/8.10.2/transforms/da1830679d281cf61f788bbb0c03d138/transformed/navigation-common-ktx-2.8.0/AndroidManifest.xml:2:1-7:12
@@ -34,6 +34,10 @@ MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /home/douglas/.gradle
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/douglas/.gradle/caches/8.10.2/transforms/4b690b94746f84a07768a3bc35d2628b/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/douglas/.gradle/caches/8.10.2/transforms/f294b8fac6b01e85fad1d1413b34d936/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/douglas/.gradle/caches/8.10.2/transforms/d17385d7d93aa7228fbec5df9df2dae2/transformed/viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-location:21.0.1] /home/douglas/.gradle/caches/8.10.2/transforms/a7b94f3a03c28b27856abae0ba65e6ce/transformed/play-services-location-21.0.1/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-base:18.1.0] /home/douglas/.gradle/caches/8.10.2/transforms/c1b5ba045d6f0ba7053f20ef37291df3/transformed/play-services-base-18.1.0/AndroidManifest.xml:16:1-24:12
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /home/douglas/.gradle/caches/8.10.2/transforms/bf97e5a6df0bf3cb652382e5c18bca26/transformed/play-services-tasks-18.0.2/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] /home/douglas/.gradle/caches/8.10.2/transforms/be30c0525f1b7e4cd5ab06ed84d84ff1/transformed/play-services-basement-18.1.0/AndroidManifest.xml:16:1-26:12
 MERGED from [androidx.fragment:fragment:1.1.0] /home/douglas/.gradle/caches/8.10.2/transforms/0af7057aa5a287a582b346f8e6467430/transformed/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/douglas/.gradle/caches/8.10.2/transforms/66c88ddc9681532eea09942123cdfff2/transformed/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] /home/douglas/.gradle/caches/8.10.2/transforms/de0340e659289505b22a367a889ed25e/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -91,15 +95,43 @@ MERGED from [androidx.annotation:annotation-experimental:1.4.1] /home/douglas/.g
 		INJECTED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:5:5-78
+	android:name
+		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:5:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:6:5-80
+	android:name
+		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:6:22-78
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:7:5-78
+	android:name
+		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:7:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:8:5-75
+	android:name
+		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:8:22-73
+uses-permission#android.permission.INTERNET
+ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:9:5-66
+	android:name
+		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:9:22-64
 application
-ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:5:5-26:19
-INJECTED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:5:5-26:19
+ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:11:5-32:19
+INJECTED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:11:5-32:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.7.7] /home/douglas/.gradle/caches/8.10.2/transforms/9eac5dea6a95dd9d58f68b004d76ea70/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.7.7] /home/douglas/.gradle/caches/8.10.2/transforms/9eac5dea6a95dd9d58f68b004d76ea70/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
 MERGED from [com.google.android.material:material:1.4.0] /home/douglas/.gradle/caches/8.10.2/transforms/20f15f017ab6951b754b0ec0fd9f0ae2/transformed/material-1.4.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.4.0] /home/douglas/.gradle/caches/8.10.2/transforms/20f15f017ab6951b754b0ec0fd9f0ae2/transformed/material-1.4.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /home/douglas/.gradle/caches/8.10.2/transforms/96405b51049f87c5f7e971371c1306a3/transformed/constraintlayout-2.0.1/AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /home/douglas/.gradle/caches/8.10.2/transforms/96405b51049f87c5f7e971371c1306a3/transformed/constraintlayout-2.0.1/AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.gms:play-services-location:21.0.1] /home/douglas/.gradle/caches/8.10.2/transforms/a7b94f3a03c28b27856abae0ba65e6ce/transformed/play-services-location-21.0.1/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-location:21.0.1] /home/douglas/.gradle/caches/8.10.2/transforms/a7b94f3a03c28b27856abae0ba65e6ce/transformed/play-services-location-21.0.1/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-base:18.1.0] /home/douglas/.gradle/caches/8.10.2/transforms/c1b5ba045d6f0ba7053f20ef37291df3/transformed/play-services-base-18.1.0/AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-base:18.1.0] /home/douglas/.gradle/caches/8.10.2/transforms/c1b5ba045d6f0ba7053f20ef37291df3/transformed/play-services-base-18.1.0/AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /home/douglas/.gradle/caches/8.10.2/transforms/bf97e5a6df0bf3cb652382e5c18bca26/transformed/play-services-tasks-18.0.2/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /home/douglas/.gradle/caches/8.10.2/transforms/bf97e5a6df0bf3cb652382e5c18bca26/transformed/play-services-tasks-18.0.2/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] /home/douglas/.gradle/caches/8.10.2/transforms/be30c0525f1b7e4cd5ab06ed84d84ff1/transformed/play-services-basement-18.1.0/AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] /home/douglas/.gradle/caches/8.10.2/transforms/be30c0525f1b7e4cd5ab06ed84d84ff1/transformed/play-services-basement-18.1.0/AndroidManifest.xml:20:5-24:19
 MERGED from [androidx.emoji2:emoji2:1.3.0] /home/douglas/.gradle/caches/8.10.2/transforms/fe8886b7d4bdda687204749a1a2ab6f1/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.emoji2:emoji2:1.3.0] /home/douglas/.gradle/caches/8.10.2/transforms/fe8886b7d4bdda687204749a1a2ab6f1/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.core:core:1.15.0] /home/douglas/.gradle/caches/8.10.2/transforms/89bb9a04db7fe278b3488e91d76a82e4/transformed/core-1.15.0/AndroidManifest.xml:28:5-89
@@ -119,43 +151,43 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/dougl
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.15.0] /home/douglas/.gradle/caches/8.10.2/transforms/89bb9a04db7fe278b3488e91d76a82e4/transformed/core-1.15.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:12:9-35
+		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:18:9-35
 	android:label
-		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:10:9-41
+		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:16:9-41
 	android:fullBackupContent
-		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:8:9-54
+		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:14:9-54
 	android:roundIcon
-		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:11:9-54
+		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:17:9-54
 	tools:targetApi
-		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:14:9-29
+		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:20:9-29
 	android:icon
-		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:9:9-43
+		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:15:9-43
 	android:allowBackup
-		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:6:9-35
+		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:12:9-35
 	android:theme
-		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:13:9-48
+		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:19:9-48
 	android:dataExtractionRules
-		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:7:9-65
+		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:13:9-65
 activity#com.douglas.appdotempo.MainActivity
-ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:15:9-25:20
+ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:21:9-31:20
 	android:label
-		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:18:13-45
+		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:24:13-45
 	android:exported
-		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:17:13-36
+		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:23:13-36
 	android:theme
-		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:19:13-52
+		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:25:13-52
 	android:name
-		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:16:13-41
+		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:22:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:20:13-24:29
+ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:26:13-30:29
 action#android.intent.action.MAIN
-ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:21:17-69
+ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:27:17-69
 	android:name
-		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:21:25-66
+		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:27:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:23:17-77
+ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:29:17-77
 	android:name
-		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:23:27-74
+		ADDED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml:29:27-74
 uses-sdk
 INJECTED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/douglas/AndroidStudioProjects/appDoTempo/app/src/main/AndroidManifest.xml
@@ -220,6 +252,14 @@ MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/douglas/.gradle
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/douglas/.gradle/caches/8.10.2/transforms/f294b8fac6b01e85fad1d1413b34d936/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/douglas/.gradle/caches/8.10.2/transforms/d17385d7d93aa7228fbec5df9df2dae2/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/douglas/.gradle/caches/8.10.2/transforms/d17385d7d93aa7228fbec5df9df2dae2/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-location:21.0.1] /home/douglas/.gradle/caches/8.10.2/transforms/a7b94f3a03c28b27856abae0ba65e6ce/transformed/play-services-location-21.0.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-location:21.0.1] /home/douglas/.gradle/caches/8.10.2/transforms/a7b94f3a03c28b27856abae0ba65e6ce/transformed/play-services-location-21.0.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:18.1.0] /home/douglas/.gradle/caches/8.10.2/transforms/c1b5ba045d6f0ba7053f20ef37291df3/transformed/play-services-base-18.1.0/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-base:18.1.0] /home/douglas/.gradle/caches/8.10.2/transforms/c1b5ba045d6f0ba7053f20ef37291df3/transformed/play-services-base-18.1.0/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /home/douglas/.gradle/caches/8.10.2/transforms/bf97e5a6df0bf3cb652382e5c18bca26/transformed/play-services-tasks-18.0.2/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /home/douglas/.gradle/caches/8.10.2/transforms/bf97e5a6df0bf3cb652382e5c18bca26/transformed/play-services-tasks-18.0.2/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] /home/douglas/.gradle/caches/8.10.2/transforms/be30c0525f1b7e4cd5ab06ed84d84ff1/transformed/play-services-basement-18.1.0/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] /home/douglas/.gradle/caches/8.10.2/transforms/be30c0525f1b7e4cd5ab06ed84d84ff1/transformed/play-services-basement-18.1.0/AndroidManifest.xml:18:5-43
 MERGED from [androidx.fragment:fragment:1.1.0] /home/douglas/.gradle/caches/8.10.2/transforms/0af7057aa5a287a582b346f8e6467430/transformed/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.1.0] /home/douglas/.gradle/caches/8.10.2/transforms/0af7057aa5a287a582b346f8e6467430/transformed/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/douglas/.gradle/caches/8.10.2/transforms/66c88ddc9681532eea09942123cdfff2/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
@@ -324,6 +364,20 @@ ADDED from [androidx.compose.ui:ui-tooling-android:1.7.7] /home/douglas/.gradle/
 		ADDED from [androidx.compose.ui:ui-tooling-android:1.7.7] /home/douglas/.gradle/caches/8.10.2/transforms/9eac5dea6a95dd9d58f68b004d76ea70/transformed/ui-tooling-release/AndroidManifest.xml:25:13-36
 	android:name
 		ADDED from [androidx.compose.ui:ui-tooling-android:1.7.7] /home/douglas/.gradle/caches/8.10.2/transforms/9eac5dea6a95dd9d58f68b004d76ea70/transformed/ui-tooling-release/AndroidManifest.xml:24:13-71
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:18.1.0] /home/douglas/.gradle/caches/8.10.2/transforms/c1b5ba045d6f0ba7053f20ef37291df3/transformed/play-services-base-18.1.0/AndroidManifest.xml:20:9-22:45
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:18.1.0] /home/douglas/.gradle/caches/8.10.2/transforms/c1b5ba045d6f0ba7053f20ef37291df3/transformed/play-services-base-18.1.0/AndroidManifest.xml:22:19-43
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:18.1.0] /home/douglas/.gradle/caches/8.10.2/transforms/c1b5ba045d6f0ba7053f20ef37291df3/transformed/play-services-base-18.1.0/AndroidManifest.xml:21:19-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:18.1.0] /home/douglas/.gradle/caches/8.10.2/transforms/c1b5ba045d6f0ba7053f20ef37291df3/transformed/play-services-base-18.1.0/AndroidManifest.xml:20:19-85
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:18.1.0] /home/douglas/.gradle/caches/8.10.2/transforms/be30c0525f1b7e4cd5ab06ed84d84ff1/transformed/play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:18.1.0] /home/douglas/.gradle/caches/8.10.2/transforms/be30c0525f1b7e4cd5ab06ed84d84ff1/transformed/play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:18.1.0] /home/douglas/.gradle/caches/8.10.2/transforms/be30c0525f1b7e4cd5ab06ed84d84ff1/transformed/play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
 provider#androidx.startup.InitializationProvider
 ADDED from [androidx.emoji2:emoji2:1.3.0] /home/douglas/.gradle/caches/8.10.2/transforms/fe8886b7d4bdda687204749a1a2ab6f1/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
 MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /home/douglas/.gradle/caches/8.10.2/transforms/50ec1f77b8d884b4331afe3694f02687/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:24:9-32:20

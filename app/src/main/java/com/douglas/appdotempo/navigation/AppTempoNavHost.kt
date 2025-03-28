@@ -5,6 +5,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
+import com.douglas.appdotempo.ui.features.listaPaises.ListaPaisesScreen
 import com.douglas.appdotempo.ui.features.prevgeral.prevGeralScreen
 import kotlinx.serialization.Serializable
 
@@ -12,9 +13,12 @@ import kotlinx.serialization.Serializable
 object PrevRoute
 
 @Serializable
-data class AddEditRoute(
-    val id: Long? = null
+data class ListCidadeRoute(
+    val nomePais: String
 )
+
+@Serializable
+object ListPaisesRoute
 
 @Composable
 fun AppTempoNavHost(
@@ -27,8 +31,24 @@ fun AppTempoNavHost(
     ) {
         composable<PrevRoute> {
             prevGeralScreen(
+                navigateToPaises = {
+                    navController.navigate(ListPaisesRoute)
+                }
+            )
+        }
+
+        /*composable<ListCidadeRoute> {
+            listaCidadesScreen(
                 navigateToPrevFocused = { id ->
                     navController.navigate(AddEditRoute(id = id))
+                }
+            )
+        }*/
+
+        composable<ListPaisesRoute> {
+            ListaPaisesScreen (
+                navigateToCidades = { nomePais ->
+                    navController.navigate(ListCidadeRoute(nomePais = nomePais))
                 }
             )
         }

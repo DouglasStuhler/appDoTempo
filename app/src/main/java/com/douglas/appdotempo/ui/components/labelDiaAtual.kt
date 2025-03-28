@@ -1,5 +1,6 @@
 package com.douglas.appdotempo.ui.components
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -16,6 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.douglas.appdotempo.R
 import com.douglas.appdotempo.domain.Previsao
+import com.douglas.appdotempo.ui.features.prevgeral.PrevGeralEvent
 import com.douglas.appdotempo.ui.theme.AppDoTempoTheme
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -24,10 +26,16 @@ import java.util.Locale
 @Composable
 fun labelDiaAtual(
     localidade: String,
+    onClickGeral: (PrevGeralEvent) -> Unit
 ){
     Column (
         modifier = Modifier
-            .fillMaxWidth(),
+            .fillMaxWidth()
+            .clickable(
+                onClick = {
+                    onClickGeral(PrevGeralEvent.onClick(null))
+                }
+            ),
         horizontalAlignment = Alignment.CenterHorizontally
     ){
         Row (
@@ -63,7 +71,8 @@ fun labelDiaAtual(
 fun labelDiaAtualPrev(){
     AppDoTempoTheme {
         labelDiaAtual(
-            localidade = "Uberlândia"
+            localidade = "Uberlândia",
+            onClickGeral = {}
         )
     }
 }

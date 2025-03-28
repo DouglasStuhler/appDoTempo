@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.douglas.appdotempo.app-mergeDebugResources-62:/values-en-rXC/values-en-rXC.xml",
+            "outputFile": "com.douglas.appdotempo.app-mergeDebugResources-64:/values-en-rXC/values-en-rXC.xml",
             "map": [
                 {
                     "source": "/home/douglas/.gradle/caches/8.10.2/transforms/852b0875376e856d6921e67a4c015af3/transformed/material3-release/res/values-en-rXC/values-en-rXC.xml",

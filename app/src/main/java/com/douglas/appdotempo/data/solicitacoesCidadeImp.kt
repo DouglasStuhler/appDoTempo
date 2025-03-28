@@ -1,5 +1,6 @@
 package com.douglas.appdotempo.data
 
+import android.util.Log
 import com.douglas.appdotempo.domain.Pais
 import io.ktor.client.*
 import io.ktor.client.call.*
@@ -16,19 +17,20 @@ data class Solicicatao(
     val data: List<Pais>
 )
 
-var cliente = HttpClient(CIO)
+class solicitacoesCidadeImp(): solicitacoesCidades{
 
 
-suspend fun getPaises(): List<Pais> {
+    override suspend fun getPaises(): List<Pais> {
+        val cliente = HttpClient(CIO)
+        val respond: HttpResponse = cliente.get("https://countriesnow.space/api/v0.1/countries")
+        var dados = Solicicatao(true, "", listOf(Pais("","","", listOf())))
+        if(respond.status.value in 200..299) {
+            dados = Json.decodeFromString<Solicicatao>(respond.body())
+        }
 
-    var respond: HttpResponse = cliente.get("https://countriesnow.space/api/v0.1/countries")
-    var dados = Solicicatao(true, "", listOf(Pais("","","", listOf())))
-    if(respond.status.value in 200..299) {
-        dados = Json.decodeFromString<Solicicatao>(respond.body())
-        println(dados.data[0].country)
+        cliente.close()
+        return dados.data
+
     }
-
-    cliente.close()
-    return dados.data
-
 }
+

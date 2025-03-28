@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.douglas.appdotempo.app-mergeDebugResources-62:/values-en-rIN/values-en-rIN.xml",
+            "outputFile": "com.douglas.appdotempo.app-mergeDebugResources-64:/values-en-rIN/values-en-rIN.xml",
             "map": [
                 {
                     "source": "/home/douglas/.gradle/caches/8.10.2/transforms/8515cdec997ed244cf7825281ec63ffb/transformed/foundation-release/res/values-en-rIN/values-en-rIN.xml",

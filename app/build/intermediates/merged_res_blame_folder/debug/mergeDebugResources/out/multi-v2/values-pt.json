@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.douglas.appdotempo.app-mergeDebugResources-62:/values-pt/values-pt.xml",
+            "outputFile": "com.douglas.appdotempo.app-mergeDebugResources-64:/values-pt/values-pt.xml",
             "map": [
                 {
                     "source": "/home/douglas/.gradle/caches/8.10.2/transforms/89bb9a04db7fe278b3488e91d76a82e4/transformed/core-1.15.0/res/values-pt/values-pt.xml",
