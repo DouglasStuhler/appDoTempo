@@ -68,4 +68,5 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
     implementation("io.ktor:ktor-client-core:$ktor_version")
     implementation("io.ktor:ktor-client-cio:$ktor_version")
+    implementation("com.google.android.gms:play-services-location:21.0.1")
 }
