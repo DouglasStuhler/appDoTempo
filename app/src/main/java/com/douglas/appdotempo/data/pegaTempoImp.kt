@@ -11,7 +11,7 @@ import com.douglas.appdotempo.domain.Previsao
 import java.util.*
 import java.text.SimpleDateFormat
 
-class pegaTempo {
+class pegaTempoImp {
 
     var api : String = "c0e53cc66fcae6540aa61e92c4441051"
 
