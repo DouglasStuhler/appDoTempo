@@ -11,12 +11,12 @@ import com.douglas.appdotempo.domain.Previsao
 import java.util.*
 import java.text.SimpleDateFormat
 
-class pegaTempoImp {
+class pegaTempoImp : pegaTempo {
 
     var api : String = "c0e53cc66fcae6540aa61e92c4441051"
 
     @SuppressLint("DefaultLocale")
-    suspend fun getTempoCidade(cidade: String) : Previsao?{
+    override suspend fun getTempoCidade(cidade: String) : Previsao?{
         val cliente = HttpClient(CIO)
         val respond: HttpResponse =
             cliente.get("https://api.openweathermap.org/data/2.5/weather?q=$cidade&appid=$api&lang=pt_br&units=metric")
@@ -62,7 +62,7 @@ class pegaTempoImp {
     }
 
     @SuppressLint("DefaultLocale")
-    suspend fun getTempoLatLong(latitude: Double, longitude: Double) : Previsao?{
+    override suspend fun getTempoLatLong(latitude: Double, longitude: Double) : Previsao?{
         val cliente = HttpClient(CIO)
         val respond: HttpResponse =
             cliente.get("https://api.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitude&appid=$api&lang=pt_br&units=metric")
@@ -109,7 +109,7 @@ class pegaTempoImp {
         )
     }
 
-    suspend fun previsoesCidade(cidade: String) : List<Previsao>{
+    override suspend fun previsoesCidade(cidade: String) : List<Previsao>{
         var previsoes = mutableListOf<Previsao>()
         val cliente = HttpClient(CIO)
         for(i in 1..5) {

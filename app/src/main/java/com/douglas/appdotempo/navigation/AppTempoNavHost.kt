@@ -7,6 +7,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.douglas.appdotempo.ui.features.listaPaises.ListaCidadesScreen
 import com.douglas.appdotempo.ui.features.listaPaises.ListaPaisesScreen
+import com.douglas.appdotempo.ui.features.prevDetalhada.PrevDetalhadaScreen
 import com.douglas.appdotempo.ui.features.prevgeral.prevGeralScreen
 import kotlinx.serialization.Serializable
 
@@ -50,6 +51,13 @@ fun AppTempoNavHost(
                 navigateToDetalhes= { nomeCidade ->
                     navController.navigate(DetalhesCidadeRoute(nomeCidade = nomeCidade))
                 }
+            )
+        }
+
+        composable<DetalhesCidadeRoute> {backStackEntry ->
+            val detalhesCidadeRoute = backStackEntry.toRoute<DetalhesCidadeRoute>()
+            PrevDetalhadaScreen(
+                cidade = detalhesCidadeRoute.nomeCidade
             )
         }
 
