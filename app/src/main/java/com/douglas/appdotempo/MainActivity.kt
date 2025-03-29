@@ -1,6 +1,7 @@
 package com.douglas.appdotempo
 
-
+import AppTempoNavHost
+import com.douglas.appdotempo.navigation.*
 import android.Manifest
 import android.content.pm.PackageManager
 import android.location.Location
@@ -34,7 +35,7 @@ import com.douglas.appdotempo.ui.components.labelDiaAtual
 import com.douglas.appdotempo.ui.components.resumoPrev
 import com.douglas.appdotempo.ui.theme.AppDoTempoTheme
 import com.douglas.appdotempo.ui.theme.azul_dia
-import com.douglas.to_dolist.navigation.AppTempoNavHost
+
 
 class MainActivity : ComponentActivity() {
 
@@ -87,12 +88,9 @@ class MainActivity : ComponentActivity() {
 
     @RequiresPermission(allOf = [Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION])
     private fun getloc(){
-        print("AOBA")
         fusedLocationClient.lastLocation.addOnSuccessListener{ loc: Location? ->
             loc?.let {
-
                 val  achou = Loc(it.latitude,it.longitude)
-
             }
         }
     }
