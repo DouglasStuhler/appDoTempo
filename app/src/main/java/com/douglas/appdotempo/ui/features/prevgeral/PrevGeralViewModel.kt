@@ -1,9 +1,9 @@
 package com.douglas.appdotempo.ui.features.prevgeral
 
+import ListPaisesRoute
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.douglas.appdotempo.ui.UIEvent
-import com.douglas.to_dolist.navigation.ListPaisesRoute
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch

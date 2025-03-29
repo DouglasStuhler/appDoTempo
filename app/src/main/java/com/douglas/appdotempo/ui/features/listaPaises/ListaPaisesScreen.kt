@@ -1,5 +1,6 @@
 package com.douglas.appdotempo.ui.features.listaPaises
 
+import ListCidadeRoute
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -22,8 +23,6 @@ import com.douglas.appdotempo.domain.Pais
 import com.douglas.appdotempo.domain.paises
 import com.douglas.appdotempo.ui.UIEvent
 import com.douglas.appdotempo.ui.theme.AppDoTempoTheme
-import com.douglas.to_dolist.navigation.ListCidadeRoute
-import com.douglas.to_dolist.navigation.ListPaisesRoute
 
 @Composable
 fun ListaPaisesScreen(
@@ -47,6 +46,7 @@ fun ListaPaisesScreen(
                 }
 
                 UIEvent.NavigateBack -> {}
+                else -> {}
             }
         }
     }

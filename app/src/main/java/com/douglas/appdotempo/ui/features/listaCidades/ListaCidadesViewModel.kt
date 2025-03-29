@@ -1,5 +1,6 @@
 package com.douglas.appdotempo.ui.features.listaCidades
 
+import DetalhesCidadeRoute
 import com.douglas.appdotempo.ui.features.listaPaises.ListaPaisesEvents
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -9,11 +10,11 @@ import androidx.lifecycle.viewModelScope
 import com.douglas.appdotempo.data.solicitacoesCidades
 import com.douglas.appdotempo.domain.Pais
 import com.douglas.appdotempo.ui.UIEvent
-import com.douglas.to_dolist.navigation.DetalhesCidadeRoute
-import com.douglas.to_dolist.navigation.ListCidadeRoute
-import com.douglas.to_dolist.navigation.ListPaisesRoute
 import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.receiveAsFlow
+import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
 class ListaCidadesViewModel (
@@ -21,10 +22,13 @@ class ListaCidadesViewModel (
     private val repository: solicitacoesCidades
 ): ViewModel() {
 
-    var listaCidade by mutableStateOf(emptyList<String>())
+    var listaCidades by mutableStateOf(emptyList<String>())
         private set
 
     var nomeCidade by mutableStateOf("")
+        private set
+
+    var pesquisa by mutableStateOf("")
         private set
 
     private val _uiEvent = Channel<UIEvent>()
@@ -33,7 +37,7 @@ class ListaCidadesViewModel (
     init {
         viewModelScope.launch{
             val lista= repository.getCidades(nomePais)
-            listaCidade = lista
+            listaCidades = lista
         }
     }
 
@@ -43,6 +47,15 @@ class ListaCidadesViewModel (
                 nomeCidade = event.nomeCidade
                 viewModelScope.launch {
                     _uiEvent.send(UIEvent.Navigate(DetalhesCidadeRoute(event.nomeCidade)))
+                }
+            }
+            is ListaCidadesEvents.onEvent -> {
+                viewModelScope.launch {
+                    pesquisa = event.pesquisa
+
+                    val lista = repository.getCidadesComFiltro(event.pais, event.pesquisa)
+                    listaCidades= lista
+
                 }
             }
         }

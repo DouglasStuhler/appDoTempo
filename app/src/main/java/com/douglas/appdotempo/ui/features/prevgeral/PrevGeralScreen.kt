@@ -1,5 +1,6 @@
 package com.douglas.appdotempo.ui.features.prevgeral
 
+import ListPaisesRoute
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -17,7 +18,6 @@ import com.douglas.appdotempo.ui.components.cardCarrousel
 import com.douglas.appdotempo.ui.components.labelDiaAtual
 import com.douglas.appdotempo.ui.components.resumoPrev
 import com.douglas.appdotempo.ui.theme.azul_dia
-import com.douglas.to_dolist.navigation.ListPaisesRoute
 
 @Composable
 fun prevGeralScreen(
@@ -39,6 +39,7 @@ fun prevGeralScreen(
                 }
 
                 UIEvent.NavigateBack -> {}
+                else -> {}
             }
         }
     }

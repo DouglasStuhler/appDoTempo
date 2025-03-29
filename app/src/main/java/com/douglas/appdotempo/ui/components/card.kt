@@ -40,10 +40,10 @@ fun card (
     var icone = painterResource(id = R.drawable.sol)
     var corIcone = amarelo_sol
     var corFundo = azul_dia
-    if(previsao.chuvaPorc > 50){
-        icone = painterResource(id = R.drawable.chuva)
-        corFundo = cinza_dia_nublado
-    }
+    //if(previsao.chuvaPorc > 50){
+        //icone = painterResource(id = R.drawable.chuva)
+        //corFundo = cinza_dia_nublado
+    //}
 
     if(previsao.date == "2025-03-23"){
         corFundo = azul_noite

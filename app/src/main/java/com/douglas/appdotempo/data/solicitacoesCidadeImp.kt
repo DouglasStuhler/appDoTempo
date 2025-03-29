@@ -9,6 +9,9 @@ import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import io.ktor.http.ContentType
 import io.ktor.http.contentType
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.asFlow
+import kotlinx.coroutines.flow.map
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 
@@ -52,6 +55,19 @@ class solicitacoesCidadeImp(): solicitacoesCidades{
 
         cliente.close()
         return dados.data
+    }
+
+    override suspend fun getCidadesComFiltro(pais: String, pesquisa: String): List<String> {
+        val cliente = HttpClient(CIO)
+        val respond: HttpResponse = cliente.get("https://countriesnow.space/api/v0.1/countries/cities/q?country=$pais")
+        var dados = SolicicataoCidade(true, "", listOf(""))
+        if(respond.status.value in 200..299) {
+            dados = Json.decodeFromString<SolicicataoCidade>(respond.body())
+        }
+        cliente.close()
+        var resultado = dados.data.filter {it.startsWith(pesquisa)}
+
+        return resultado
     }
 }
 

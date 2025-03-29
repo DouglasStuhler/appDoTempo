@@ -1,5 +1,6 @@
 package com.douglas.appdotempo.ui.features.listaPaises
 
+import ListCidadeRoute
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -8,8 +9,6 @@ import androidx.lifecycle.viewModelScope
 import com.douglas.appdotempo.data.solicitacoesCidades
 import com.douglas.appdotempo.domain.Pais
 import com.douglas.appdotempo.ui.UIEvent
-import com.douglas.to_dolist.navigation.ListCidadeRoute
-import com.douglas.to_dolist.navigation.ListPaisesRoute
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch

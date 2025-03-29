@@ -107,7 +107,7 @@ fun quadroInfoDetalhada(
         ) {
 
             previsoesHora.forEach { previsaoItem ->
-                CardResumoHora(hora = "9:00"+"h", previsao = previsaoItem)
+                CardResumoHora(hora = "9:00", previsao = previsaoItem)
             }
         }
     }

@@ -1,7 +1,7 @@
 package com.douglas.appdotempo
 
 import AppTempoNavHost
-import com.douglas.appdotempo.navigation.*
+import androidx.navigation.compose.navigation
 import android.Manifest
 import android.content.pm.PackageManager
 import android.location.Location
