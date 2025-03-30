@@ -28,7 +28,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.modifier.modifierLocalMapOf
 import androidx.compose.ui.tooling.preview.Preview
-import com.douglas.appdotempo.data.Loc
+import com.douglas.appdotempo.data.LatLong
 import com.douglas.appdotempo.domain.previsao1
 import com.douglas.appdotempo.domain.previsao2
 import com.douglas.appdotempo.ui.components.labelDiaAtual
@@ -38,6 +38,8 @@ import com.douglas.appdotempo.ui.theme.azul_dia
 
 
 class MainActivity : ComponentActivity() {
+
+
 
     // API do google para pegar localização do usuario
     private lateinit var fusedLocationClient: FusedLocationProviderClient
@@ -86,12 +88,19 @@ class MainActivity : ComponentActivity() {
 
     }
 
+    public var lastLatLong: LatLong? = null
+
     @RequiresPermission(allOf = [Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION])
-    private fun getloc(){
+    public fun getloc(): LatLong?{
         fusedLocationClient.lastLocation.addOnSuccessListener{ loc: Location? ->
             loc?.let {
-                val  achou = Loc(it.latitude,it.longitude)
+                lastLatLong = LatLong(it.longitude, it.latitude)
             }
         }
+
+        return lastLatLong
     }
 }
+
+
+

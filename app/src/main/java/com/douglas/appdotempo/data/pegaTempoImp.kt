@@ -112,18 +112,33 @@ class pegaTempoImp : pegaTempo {
     override suspend fun previsoesCidade(cidade: String) : List<Previsao>{
         var previsoes = mutableListOf<Previsao>()
         val cliente = HttpClient(CIO)
-        for(i in 1..5) {
-            val respond: HttpResponse =
-                cliente.get("https://api.openweathermap.org/data/2.5/forecast/daily?q=$cidade&appid=$api&lang=pt_br&units=metric&cnt=$i")
-            if (respond.status.value !in 200..299) {
-                print("Erro de requisição : ${respond.status}")
-            }else{
-                val jsonObj = JSONObject(respond.bodyAsText())
-                val temp = jsonObj.getJSONObject("list").getJSONObject("temp").getString("day")
-                val temp_min = jsonObj.getJSONObject("list").getJSONObject("temp").getString("min")
-                val temp_max = jsonObj.getJSONObject("list").getJSONObject("temp").getString("max")
-            }
+        val respond: HttpResponse =
+            cliente.get("https://api.openweathermap.org/data/2.5/forecast/daily?q=$cidade&appid=$api&lang=pt_br&units=metric&cnt=7")
+
+        if(respond.status.value !in  200..299){
+            print("Erro de requisição : ${respond.status}")
+            return previsoes
         }
+
+        val jsonObj = JSONObject(respond.bodyAsText())
+        val list = jsonObj.getJSONArray("list")
+        val tempList = mutableListOf<JSONObject>()
+
+        //Adicionando os item do JSONArray em uma lista temporaria
+
+        for (i in 0 until list.length()){
+            tempList.add(list.getJSONObject(i))
+        }
+
+        tempList.forEach { elemento ->
+            val weatherArray = elemento.getJSONArray("weather")
+            val temp = elemento.getJSONObject("temp")
+            val firstWeather = weatherArray.getJSONObject(0)
+
+        }
+
+
+
 
         cliente.close()
 
