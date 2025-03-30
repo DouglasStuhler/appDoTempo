@@ -132,6 +132,8 @@ class pegaTempoImp : pegaTempo {
             return previsoes
         }
 
+        cliente.close()
+
         val jsonObj = JSONObject(respond.bodyAsText())
         val list = jsonObj.getJSONArray("list")
         val tempList = mutableListOf<JSONObject>()
@@ -152,15 +154,21 @@ class pegaTempoImp : pegaTempo {
             val temp_max = temp.getString("max")
             val umidade = elemento.getString("humidity")
             val vel_vento = elemento.getString("speed")
-            val chuva = elemento.getJSONObject("clouds")
+            val chuva = elemento.getString("clouds")
+            val desc = firstWeather.getString("description")
 
-
+            previsoes.add(Previsao(
+                date = "",
+                tempMax = temp_max,
+                tempMin = temp_min,
+                tempAtual = temp_day,
+                umidade = umidade,
+                velocidadeVento = vel_vento,
+                chuvaPorc = chuva,
+                desc = desc,
+                cidade = ""
+            ))
         }
-
-
-
-
-        cliente.close()
 
         return previsoes
     }
