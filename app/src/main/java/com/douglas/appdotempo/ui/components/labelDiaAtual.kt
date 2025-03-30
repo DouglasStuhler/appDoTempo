@@ -19,6 +19,7 @@ import com.douglas.appdotempo.R
 import com.douglas.appdotempo.domain.Previsao
 import com.douglas.appdotempo.ui.features.prevgeral.PrevGeralEvent
 import com.douglas.appdotempo.ui.theme.AppDoTempoTheme
+import com.douglas.appdotempo.ui.theme.branco_mais_claro
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -48,10 +49,12 @@ fun labelDiaAtual(
                 contentDescription = "Localidade",
                 modifier = Modifier
                     .size(45.dp),
+                tint = branco_mais_claro
             )
             Text(
                 text = localidade,
-                fontSize = 30.sp
+                fontSize = 30.sp,
+                color = branco_mais_claro
             )
         }
 
@@ -61,7 +64,8 @@ fun labelDiaAtual(
 
         Text(
             text = formato.format(data),
-            fontSize = 20.sp
+            fontSize = 20.sp,
+            color = branco_mais_claro
         )
     }
 }

@@ -4,26 +4,7 @@
             "outputFile": "com.douglas.appdotempo.app-mergeDebugResources-64:/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "/home/douglas/.gradle/caches/8.10.2/transforms/20f15f017ab6951b754b0ec0fd9f0ae2/transformed/material-1.4.0/res/values-v23/values-v23.xml",
-                    "from": {
-                        "startLines": "2,6",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,320",
-                        "endLines": "5,9",
-                        "endColumns": "10,10",
-                        "endOffsets": "315,588"
-                    },
-                    "to": {
-                        "startLines": "53,57",
-                        "startColumns": "4,4",
-                        "startOffsets": "3382,3647",
-                        "endLines": "56,60",
-                        "endColumns": "10,10",
-                        "endOffsets": "3642,3915"
-                    }
-                },
-                {
-                    "source": "/home/douglas/.gradle/caches/8.10.2/transforms/8ba2c7bf76cafd81b72f912005b16346/transformed/cardview-1.0.0/res/values-v23/values-v23.xml",
+                    "source": "/home/douglas/.gradle/caches/8.11.1/transforms/971a4f94e64d7017718353fa7c259138/transformed/cardview-1.0.0/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -42,7 +23,26 @@
                     }
                 },
                 {
-                    "source": "/home/douglas/.gradle/caches/8.10.2/transforms/37a29833693e53a548cf470999523037/transformed/appcompat-1.2.0/res/values-v23/values-v23.xml",
+                    "source": "/home/douglas/.gradle/caches/8.11.1/transforms/4371a189d9bb6fdd42bb8054318b9a39/transformed/material-1.4.0/res/values-v23/values-v23.xml",
+                    "from": {
+                        "startLines": "2,6",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,320",
+                        "endLines": "5,9",
+                        "endColumns": "10,10",
+                        "endOffsets": "315,588"
+                    },
+                    "to": {
+                        "startLines": "53,57",
+                        "startColumns": "4,4",
+                        "startOffsets": "3382,3647",
+                        "endLines": "56,60",
+                        "endColumns": "10,10",
+                        "endOffsets": "3642,3915"
+                    }
+                },
+                {
+                    "source": "/home/douglas/.gradle/caches/8.11.1/transforms/4e1f8bd12b93402a7170695518b29494/transformed/appcompat-1.2.0/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",

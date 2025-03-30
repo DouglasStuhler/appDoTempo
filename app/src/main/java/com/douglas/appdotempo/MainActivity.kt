@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.*
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -48,9 +49,9 @@ class MainActivity : ComponentActivity() {
 
         //Solicitação de permissão
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-        permissaoLoc()
-
         super.onCreate(savedInstanceState)
+        permissaoLoc()
+        Log.d("teste", "oi")
         enableEdgeToEdge()
         setContent {
             Box(
@@ -71,12 +72,15 @@ class MainActivity : ComponentActivity() {
         ){aceito: Boolean ->
             if (aceito){
                 // Permissao aceita
-                getloc()
+                //getloc()
+                Log.d("teste", "Permissão aceita")
             }else{
+                Log.d("teste", "Permissão negada")
                 // Permissão Negada colocar msg
             }
         }
 
+        Log.d("teste", "oi2")
         // Verifica se tem permissão
         if (ActivityCompat.checkSelfPermission(
             this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED

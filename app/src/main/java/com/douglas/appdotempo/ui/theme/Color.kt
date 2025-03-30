@@ -11,7 +11,7 @@ val PurpleGrey40 = Color(0xFF625b71)
 val Pink40 = Color(0xFF7D5260)
 
 val azul_dia = Color(0xff87cefa)
-val azul_noite = Color(0xff054f77)
+val azul_noite = Color(0xff11114e)
 val roxo_noite_chuvosa = Color(0xff5d2747)
 val cinza_dia_nublado = Color(0xff657895)
 val amarelo_sol = Color(0xfff2cb15)

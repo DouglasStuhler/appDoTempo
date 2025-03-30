@@ -38,6 +38,30 @@ import com.douglas.appdotempo.ui.theme.*
 fun resumoPrev(
     previsao: Previsao
 ){
+    var tempAtual = previsao.tempAtual
+    if(tempAtual.indexOf('.') != -1){
+        tempAtual = tempAtual.substring(0, tempAtual.indexOf('.'))
+    }
+
+    val icone = when(previsao.icon){
+        "01d" -> painterResource(id = R.drawable.sol)
+        "02d" -> painterResource(id = R.drawable.sol_nuvem)
+        "03d" -> painterResource(id = R.drawable.nuvem)
+        "04d" -> painterResource(id = R.drawable.nublado)
+        "09d" -> painterResource(id = R.drawable.chuva)
+        "10d" -> painterResource(id = R.drawable.chuva)
+        "11d" -> painterResource(id = R.drawable.chuva_trovao)
+        "13d" -> painterResource(id = R.drawable.neve)
+        "01n" -> painterResource(id = R.drawable.lua)
+        "02n" -> painterResource(id = R.drawable.lua_nuvem)
+        "03n" -> painterResource(id = R.drawable.nuvem)
+        "04n" -> painterResource(id = R.drawable.nublado)
+        "09n" -> painterResource(id = R.drawable.chuva)
+        "10n" -> painterResource(id = R.drawable.chuva)
+        "11n" -> painterResource(id = R.drawable.chuva_trovao)
+        "13n" -> painterResource(id = R.drawable.neve)
+        else -> painterResource(id = R.drawable.sol)
+    }
     Column (
         modifier = Modifier
             .fillMaxWidth()
@@ -63,13 +87,13 @@ fun resumoPrev(
                 horizontalAlignment = Alignment.CenterHorizontally
             ){
                 Text(
-                    text = previsao.tempAtual.toString()+"°",
+                    text = tempAtual+"°",
                     fontSize = 100.sp,
                     color = branco_mais_claro
                 )
                 Image(
-                    painter = painterResource(id = R.drawable.sol),
-                    contentDescription = "teste",
+                    painter = icone,
+                    contentDescription = previsao.desc,
                     modifier = Modifier
                         .size(100.dp),
                 )
@@ -81,11 +105,6 @@ fun resumoPrev(
             modifier = Modifier
                 .padding(15.dp, 5.dp, 15.dp, 5.dp)
                 .fillMaxWidth()
-                /*.border(
-                    width = 2.dp,
-                    color = cinza_nuvem,
-                    shape = RoundedCornerShape(10.dp)
-                )*/
                 .background(
                     color = branco_mais_claro,
                     shape = RoundedCornerShape(10.dp)
@@ -106,7 +125,7 @@ fun resumoPrev(
                     tint = azul_noite
                 )
                 Text(
-                    text = previsao.chuvaPorc.toString()+"%",
+                    text = previsao.chuvaPorc+"%",
                     fontSize = 20.sp
                 )
             }
@@ -125,7 +144,7 @@ fun resumoPrev(
                     tint = azul_noite
                 )
                 Text(
-                    text = previsao.umidade.toString()+"%",
+                    text = previsao.umidade+"%",
                     fontSize = 20.sp
                 )
             }
@@ -144,7 +163,7 @@ fun resumoPrev(
                     tint = cinza_dia_nublado
                 )
                 Text(
-                    text = previsao.velocidadeVento.toString()+"km/h",
+                    text = previsao.velocidadeVento+"m/s",
                     fontSize = 20.sp
                 )
             }

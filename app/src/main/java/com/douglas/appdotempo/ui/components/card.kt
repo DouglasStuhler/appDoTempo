@@ -1,5 +1,6 @@
 package com.douglas.appdotempo.ui.components
 
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -37,18 +38,56 @@ import com.douglas.appdotempo.ui.theme.cinza_nuvem
 fun card (
     previsao: Previsao
 ){
-    var icone = painterResource(id = R.drawable.sol)
-    var corIcone = amarelo_sol
-    var corFundo = azul_dia
-    //if(previsao.chuvaPorc > 50){
-        //icone = painterResource(id = R.drawable.chuva)
-        //corFundo = cinza_dia_nublado
-    //}
-
-    if(previsao.date == "2025-03-23"){
-        corFundo = azul_noite
-        icone = painterResource(id = R.drawable.lua)
+    val icone = when(previsao.icon){
+        "01d" -> painterResource(id = R.drawable.sol)
+        "02d" -> painterResource(id = R.drawable.sol_nuvem)
+        "03d" -> painterResource(id = R.drawable.nuvem)
+        "04d" -> painterResource(id = R.drawable.nublado)
+        "09d" -> painterResource(id = R.drawable.chuva)
+        "10d" -> painterResource(id = R.drawable.chuva)
+        "11d" -> painterResource(id = R.drawable.chuva_trovao)
+        "13d" -> painterResource(id = R.drawable.neve)
+        "01n" -> painterResource(id = R.drawable.lua)
+        "02n" -> painterResource(id = R.drawable.lua_nuvem)
+        "03n" -> painterResource(id = R.drawable.nuvem)
+        "04n" -> painterResource(id = R.drawable.nublado)
+        "09n" -> painterResource(id = R.drawable.chuva)
+        "10n" -> painterResource(id = R.drawable.chuva)
+        "11n" -> painterResource(id = R.drawable.chuva_trovao)
+        "13n" -> painterResource(id = R.drawable.neve)
+        else -> painterResource(id = R.drawable.sol)
     }
+
+    var corFundo = when(previsao.icon){
+        "01d" -> azul_dia
+        "02d" -> azul_dia
+        "03d" -> cinza_dia_nublado
+        "04d" -> cinza_dia_nublado
+        "09d" -> cinza_dia_nublado
+        "10d" -> cinza_dia_nublado
+        "11d" -> cinza_dia_nublado
+        "13d" -> cinza_dia_nublado
+        "01n" -> azul_noite
+        "02n" -> azul_noite
+        "03n" -> cinza_nuvem
+        "04n" -> cinza_nuvem
+        "09n" -> cinza_nuvem
+        "10n" -> cinza_nuvem
+        "11n" -> cinza_nuvem
+        "13n" -> cinza_nuvem
+        else -> azul_dia
+    }
+
+    var tempMax = previsao.tempMax
+    if(tempMax.indexOf('.') != -1){
+        tempMax = tempMax.substring(0, tempMax.indexOf('.'))
+    }
+
+    var tempMin = previsao.tempMin
+    if(tempMin.indexOf('.') != -1){
+        tempMin = tempMin.substring(0, tempMin.indexOf('.'))
+    }
+
     Card(
         modifier = Modifier
             .background(
@@ -59,8 +98,8 @@ fun card (
             .width(80.dp),
         colors = CardColors(
             containerColor = corFundo,
-            contentColor = corIcone,
-            disabledContentColor = corIcone,
+            contentColor = amarelo_sol,
+            disabledContentColor = amarelo_sol,
             disabledContainerColor = corFundo
         )
     ) {
@@ -71,13 +110,18 @@ fun card (
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = previsao.tempAtual.toString() + "°",
+                text = tempMax + "°",
                 color = branco_mais_claro,
-                fontSize = 40.sp,
+                fontSize = 24.sp,
+            )
+            Text(
+                text = tempMin + "°",
+                color = branco_mais_claro,
+                fontSize = 24.sp,
             )
             Image(
                 painter = icone,
-                contentDescription = "teste",
+                contentDescription = previsao.desc,
                 modifier = Modifier
                     .size(38.dp)
                     .padding(vertical = 3.dp),

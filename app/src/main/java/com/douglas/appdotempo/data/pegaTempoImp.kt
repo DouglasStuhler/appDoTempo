@@ -8,6 +8,7 @@ import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import org.json.JSONObject
 import com.douglas.appdotempo.domain.Previsao
+import org.json.JSONArray
 import java.util.*
 import java.text.SimpleDateFormat
 
@@ -47,7 +48,8 @@ class pegaTempoImp : pegaTempo {
         val umidade = main.getString("humidity")
         val vel_vento = jsonObj.getJSONObject("wind").getString("speed")
         val chuva = jsonObj.getJSONObject("clouds").getString("all")
-        val desc = jsonObj.getJSONObject("weather").getString("description")
+        val desc = jsonObj.getJSONArray("weather").getJSONObject(2).getString("description")
+        val icon = jsonObj.getJSONArray("weather").getJSONObject(2).getString("icon")
 
         return Previsao(
             date = data_time,
@@ -58,7 +60,8 @@ class pegaTempoImp : pegaTempo {
             chuvaPorc = chuva,
             velocidadeVento = vel_vento,
             desc = desc,
-            cidade = cidade
+            cidade = cidade,
+            icon = icon
         )
     }
 
@@ -81,8 +84,8 @@ class pegaTempoImp : pegaTempo {
             print("Erro de requisição : ${respond1.status}")
             return null
         }
-        val jsonObj1 = JSONObject(respond1.bodyAsText())
-        val city = jsonObj1.getString("name")
+        val jsonObj1 = JSONArray(respond1.bodyAsText())
+        val city = jsonObj1.getJSONObject(0).getString("name")
 
         cliente.close()
 
@@ -106,7 +109,8 @@ class pegaTempoImp : pegaTempo {
         val umidade = main.getString("humidity")
         val vel_vento = jsonObj.getJSONObject("wind").getString("speed")
         val chuva = jsonObj.getJSONObject("clouds").getString("all")
-        val desc = jsonObj.getJSONObject("weather").getString("description")
+        val desc = jsonObj.getJSONArray("weather").getJSONObject(0).getString("description")
+        val icon = jsonObj.getJSONArray("weather").getJSONObject(0).getString("icon")
 
         return Previsao(
             date = data_time,
@@ -117,7 +121,8 @@ class pegaTempoImp : pegaTempo {
             chuvaPorc = chuva,
             velocidadeVento = vel_vento,
             desc = desc,
-            cidade = city
+            cidade = city,
+            icon = icon
         )
     }
 
@@ -156,6 +161,7 @@ class pegaTempoImp : pegaTempo {
             val vel_vento = elemento.getString("speed")
             val chuva = elemento.getString("clouds")
             val desc = firstWeather.getString("description")
+            val icon = firstWeather.getString("icon")
 
             previsoes.add(Previsao(
                 date = "",
@@ -166,7 +172,8 @@ class pegaTempoImp : pegaTempo {
                 velocidadeVento = vel_vento,
                 chuvaPorc = chuva,
                 desc = desc,
-                cidade = ""
+                cidade = "",
+                icon = icon
             ))
         }
 

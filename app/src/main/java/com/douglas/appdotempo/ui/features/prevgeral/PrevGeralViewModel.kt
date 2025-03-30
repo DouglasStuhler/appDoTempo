@@ -18,6 +18,7 @@ import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 
+@SuppressLint("MissingPermission")
 class PrevGeralViewModel (
     private val repositoryPrevisao: pegaTempo,
     private val repositoryCidade: solicitacoesCidades
@@ -25,11 +26,9 @@ class PrevGeralViewModel (
     private val _uiEvent = Channel<UIEvent>()
     val uiEvent = _uiEvent.receiveAsFlow()
 
-    @SuppressLint("MissingPermission")
-    var latLong = MainActivity().getloc()
-    var loc: List<Double>? = latLong?.let {
-        listOf(it.latitude, it.longitude)
-    }
+    //@SuppressLint("MissingPermission")
+    //var latLong = MainActivity().getloc()
+    var loc: List<Double>? by mutableStateOf(null)
 
 
     var previsao : Previsao? by mutableStateOf(null)
@@ -40,6 +39,12 @@ class PrevGeralViewModel (
 
     init {
         viewModelScope.launch {
+            //var latLong = MainActivity().getloc()
+            /*loc = latLong?.let {
+                listOf(it.latitude, it.longitude)
+            }*/
+
+            loc = listOf(-18.9113, -48.2622)
             Log.d("teste", loc.toString())
             previsao = repositoryPrevisao.getTempoLatLong(loc?.get(0) ?: 0.0, loc?.get(1) ?: 0.0)
             Log.d("teste", loc.toString())
