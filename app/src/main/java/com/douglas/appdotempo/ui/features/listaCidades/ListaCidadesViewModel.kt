@@ -1,6 +1,7 @@
 package com.douglas.appdotempo.ui.features.listaCidades
 
 import DetalhesCidadeRoute
+import android.util.Log
 import com.douglas.appdotempo.ui.features.listaPaises.ListaPaisesEvents
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -45,6 +46,8 @@ class ListaCidadesViewModel (
         when(event){
             is ListaCidadesEvents.onClick -> {
                 nomeCidade = event.nomeCidade
+                Log.d("teste", "teste")
+                Log.d("teste", event.nomeCidade)
                 viewModelScope.launch {
                     _uiEvent.send(UIEvent.Navigate(DetalhesCidadeRoute(event.nomeCidade)))
                 }

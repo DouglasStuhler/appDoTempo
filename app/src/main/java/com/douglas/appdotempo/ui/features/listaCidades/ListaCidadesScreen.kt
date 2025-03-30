@@ -1,5 +1,6 @@
 package com.douglas.appdotempo.ui.features.listaPaises
 
+import DetalhesCidadeRoute
 import ListPaisesRoute
 import android.util.Log
 import androidx.compose.foundation.clickable
@@ -34,7 +35,7 @@ import com.douglas.appdotempo.ui.theme.AppDoTempoTheme
 @Composable
 fun ListaCidadesScreen(
     nomePais: String,
-    navigateToDetalhes: (nomePais: String) -> Unit
+    navigateToDetalhes: (cidade: String) -> Unit
 ){
     val repository = solicitacoesCidadeImp()
     val viewModel = viewModel<ListaCidadesViewModel>{
@@ -53,7 +54,7 @@ fun ListaCidadesScreen(
             when (uiEvent){
                 is UIEvent.Navigate<*> -> {
                     when (uiEvent.route){
-                        is ListPaisesRoute -> {
+                        is DetalhesCidadeRoute -> {
                             navigateToDetalhes(viewModel.nomeCidade)
                         }
                     }

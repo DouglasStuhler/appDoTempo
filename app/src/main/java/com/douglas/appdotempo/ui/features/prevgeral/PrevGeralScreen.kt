@@ -10,6 +10,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.douglas.appdotempo.data.pegaTempoImp
+import com.douglas.appdotempo.data.solicitacoesCidadeImp
+import com.douglas.appdotempo.domain.Previsao
 import com.douglas.appdotempo.domain.previsao1
 import com.douglas.appdotempo.domain.previsao2
 import com.douglas.appdotempo.domain.previsao3
@@ -24,8 +27,14 @@ fun prevGeralScreen(
     navigateToPaises: () -> Unit
 ){
     val viewModel = viewModel<PrevGeralViewModel>{
-        PrevGeralViewModel()
+        PrevGeralViewModel(
+            repositoryPrevisao = pegaTempoImp(),
+            repositoryCidade = solicitacoesCidadeImp()
+        )
     }
+
+    val previsao = viewModel.previsao
+    val previsoes = viewModel.previsoes
 
     LaunchedEffect(Unit) {
         viewModel.uiEvent.collect { uiEvent ->
@@ -44,13 +53,17 @@ fun prevGeralScreen(
         }
     }
 
-    painelPrevGeral(
+    PainelPrevGeral(
+        previsao = previsao?: previsao1,
+        previsoes = previsoes,
         onClick = viewModel::onEvent
     )
 }
 
 @Composable
-fun painelPrevGeral(
+fun PainelPrevGeral(
+    previsao: Previsao,
+    previsoes: List<Previsao> = emptyList(),
     onClick: (PrevGeralEvent) -> Unit
 ){
     Column (
@@ -67,8 +80,8 @@ fun painelPrevGeral(
             )
             .fillMaxHeight()
     ) {
-        labelDiaAtual("Uberlândia", onClickGeral = onClick)
-        resumoPrev(previsao2)
-        cardCarrousel(listOf(previsao1, previsao2, previsao3, previsao1, previsao2, previsao3, previsao2))
+        labelDiaAtual(previsao.cidade, onClickGeral = onClick)
+        resumoPrev(previsao)
+        cardCarrousel(previsoes)
     }
 }
