@@ -57,7 +57,8 @@ class pegaTempoImp : pegaTempo {
             umidade = umidade,
             chuvaPorc = chuva,
             velocidadeVento = vel_vento,
-            desc = desc
+            desc = desc,
+            cidade = cidade
         )
     }
 
@@ -72,6 +73,16 @@ class pegaTempoImp : pegaTempo {
 
             return null
         }
+
+        val respond1: HttpResponse =
+            cliente.get("http://api.openweathermap.org/geo/1.0/reverse?lat=$latitude&lon=$longitude&appid=$api&lang=pt_br&limit=5")
+
+        if(respond1.status.value !in  200..299){
+            print("Erro de requisição : ${respond1.status}")
+            return null
+        }
+        val jsonObj1 = JSONObject(respond1.bodyAsText())
+        val city = jsonObj1.getString("name")
 
         cliente.close()
 
@@ -105,7 +116,8 @@ class pegaTempoImp : pegaTempo {
             umidade = umidade,
             chuvaPorc = chuva,
             velocidadeVento = vel_vento,
-            desc = desc
+            desc = desc,
+            cidade = city
         )
     }
 
@@ -134,6 +146,14 @@ class pegaTempoImp : pegaTempo {
             val weatherArray = elemento.getJSONArray("weather")
             val temp = elemento.getJSONObject("temp")
             val firstWeather = weatherArray.getJSONObject(0)
+
+            val temp_day = temp.getString("day")
+            val temp_min = temp.getString("min")
+            val temp_max = temp.getString("max")
+            val umidade = elemento.getString("humidity")
+            val vel_vento = elemento.getString("speed")
+            val chuva = elemento.getJSONObject("clouds")
+
 
         }
 

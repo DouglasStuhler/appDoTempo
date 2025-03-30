@@ -9,6 +9,7 @@ data class Previsao(
     val velocidadeVento: String,
     val chuvaPorc: String,
     val desc: String,
+    val cidade: String
 
 )
 
@@ -20,7 +21,8 @@ var previsao1 = Previsao(
     umidade = "8",
     velocidadeVento = "10F",
     chuvaPorc = "10",
-    desc = "aaa"
+    desc = "aaa",
+    cidade = ""
 
 )
 
@@ -32,7 +34,8 @@ var previsao2 = Previsao(
     umidade = "80",
     velocidadeVento = "7.3F",
     chuvaPorc = "35",
-    desc = "aaa"
+    desc = "aaa",
+    cidade = ""
 
 )
 
@@ -45,5 +48,6 @@ var previsao3 = Previsao(
     umidade = "90",
     velocidadeVento = "7.3F",
     chuvaPorc = "75",
-    desc = "aaa"
+    desc = "aaa",
+    cidade = ""
 )
