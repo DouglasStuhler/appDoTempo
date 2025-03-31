@@ -65,6 +65,9 @@ fun ListaCidadesScreen(
                 }
 
                 UIEvent.NavigateBack -> {}
+
+                else ->{
+                }
             }
         }
     }

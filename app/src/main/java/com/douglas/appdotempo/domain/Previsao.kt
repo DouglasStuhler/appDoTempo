@@ -65,3 +65,16 @@ var previsao4 = Previsao(
     cidade = "AAA",
     icon = ""
 )
+
+val emptyPrevisao = Previsao(
+    date = "",
+    tempMax = "",
+    tempMin = "",
+    tempAtual = "",
+    umidade = "",
+    velocidadeVento = "",
+    chuvaPorc = "",
+    desc = "",
+    cidade = "",
+    icon = ""
+)

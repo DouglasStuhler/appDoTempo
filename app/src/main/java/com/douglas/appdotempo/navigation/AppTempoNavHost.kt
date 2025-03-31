@@ -5,6 +5,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
+import com.douglas.appdotempo.data.LatLong
 import com.douglas.appdotempo.ui.features.listaPaises.ListaCidadesScreen
 import com.douglas.appdotempo.ui.features.listaPaises.ListaPaisesScreen
 import com.douglas.appdotempo.ui.features.prevDetalhada.PrevDetalhadaScreen
@@ -28,9 +29,7 @@ data class DetalhesCidadeRoute(
 object ListPaisesRoute
 
 @Composable
-fun AppTempoNavHost(
-
-) {
+fun AppTempoNavHost(currentLocation: LatLong?) {
     val navController = rememberNavController()
     NavHost(
         navController = navController,
@@ -38,6 +37,7 @@ fun AppTempoNavHost(
     ) {
         composable<PrevRoute> {
             prevGeralScreen(
+                currentLocation = currentLocation,
                 navigateToPaises = {
                     navController.navigate(ListPaisesRoute)
                 }

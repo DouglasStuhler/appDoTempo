@@ -3,13 +3,17 @@ package com.douglas.appdotempo
 import AppTempoNavHost
 import androidx.navigation.compose.navigation
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import android.location.Location
+import android.location.LocationManager
+
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.*
 import android.os.Bundle
+import android.os.Looper
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -36,74 +40,112 @@ import com.douglas.appdotempo.ui.components.labelDiaAtual
 import com.douglas.appdotempo.ui.components.resumoPrev
 import com.douglas.appdotempo.ui.theme.AppDoTempoTheme
 import com.douglas.appdotempo.ui.theme.azul_dia
+import com.google.android.gms.location.LocationRequest
 
 
 class MainActivity : ComponentActivity() {
 
 
-
     // API do google para pegar localização do usuario
     private lateinit var fusedLocationClient: FusedLocationProviderClient
+
+
+    private var locationCallback: LocationCallback? = null
+    private var currentLocation: LatLong? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         //Solicitação de permissão
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+
+
         super.onCreate(savedInstanceState)
         permissaoLoc()
-        Log.d("teste", "oi")
-        enableEdgeToEdge()
-        setContent {
-            Box(
-                modifier = Modifier
-                    .safeDrawingPadding()
-            ){
-                AppDoTempoTheme {
-                    AppTempoNavHost()
-                }
-            }
-        }
+
     }
 
-    private fun permissaoLoc(){
+    fun getloc(): LatLong?{
+        startLocationUpdates()
+        return currentLocation
+    }
+
+   private fun permissaoLoc(){
 
         val permissionLaucher = registerForActivityResult(
             ActivityResultContracts.RequestPermission()
         ){aceito: Boolean ->
             if (aceito){
-                // Permissao aceita
-                //getloc()
-                Log.d("teste", "Permissão aceita")
+                startLocationUpdates()
             }else{
-                Log.d("teste", "Permissão negada")
-                // Permissão Negada colocar msg
+                currentLocation = LatLong(55.45, 37.37)
             }
         }
 
-        Log.d("teste", "oi2")
         // Verifica se tem permissão
         if (ActivityCompat.checkSelfPermission(
             this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
         ){
             permissionLaucher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
         } else{
-            getloc()
+            startLocationUpdates()
         }
 
     }
 
-    public var lastLatLong: LatLong? = null
+    @SuppressLint("MissingPermission")
+    private fun startLocationUpdates(){
+        Log.d("Abacaxi", "Entrou Start Location")
+        val  locationRequest = LocationRequest.create().apply{
+            interval = 0
+            fastestInterval = 0
+            priority = LocationRequest.PRIORITY_HIGH_ACCURACY
+        }
 
-    @RequiresPermission(allOf = [Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION])
-    public fun getloc(): LatLong?{
-        fusedLocationClient.lastLocation.addOnSuccessListener{ loc: Location? ->
-            loc?.let {
-                lastLatLong = LatLong(it.longitude, it.latitude)
+
+        locationCallback = object  : LocationCallback (){
+
+            override fun onLocationResult(locationResult: LocationResult){
+                super .onLocationResult(locationResult)
+                locationResult.lastLocation?.let { location ->
+                    currentLocation = LatLong(location.latitude, location.longitude)
+                    Log.d("Abacaxi", "Nova Localização: $currentLocation")
+                    enableEdgeToEdge()
+                    setContent {
+                        Box(
+                            modifier = Modifier.safeDrawingPadding()
+                        ){
+                            AppDoTempoTheme {
+                                AppTempoNavHost(currentLocation)
+                            }
+                        }
+                    }
+                }
             }
+
         }
 
-        return lastLatLong
+        fusedLocationClient.requestLocationUpdates(
+            locationRequest,
+            locationCallback as LocationCallback,
+            Looper.getMainLooper()
+        )
+
+        fusedLocationClient.lastLocation.addOnSuccessListener { location -> location?.let{
+            currentLocation = LatLong(it.latitude, it.longitude)
+        } }
+
+        Log.d("Abacaxi", "Começou criação de tela")
+        Log.d("Abacaxi", "$currentLocation")
+
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        locationCallback?.let {
+            fusedLocationClient.removeLocationUpdates(it)
+        }
+    }
+
 }
 
 

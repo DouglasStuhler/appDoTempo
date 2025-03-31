@@ -1,24 +1,20 @@
 package com.douglas.appdotempo.ui.features.prevgeral
 
 import ListPaisesRoute
-import android.content.res.Resources.Theme
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.douglas.appdotempo.R
+import com.douglas.appdotempo.data.LatLong
 import com.douglas.appdotempo.data.pegaTempoImp
 import com.douglas.appdotempo.data.solicitacoesCidadeImp
 import com.douglas.appdotempo.domain.Previsao
 import com.douglas.appdotempo.domain.previsao1
-import com.douglas.appdotempo.domain.previsao2
-import com.douglas.appdotempo.domain.previsao3
 import com.douglas.appdotempo.ui.UIEvent
 import com.douglas.appdotempo.ui.components.cardCarrousel
 import com.douglas.appdotempo.ui.components.labelDiaAtual
@@ -30,12 +26,14 @@ import com.douglas.appdotempo.ui.theme.cinza_nuvem
 
 @Composable
 fun prevGeralScreen(
-    navigateToPaises: () -> Unit
+    navigateToPaises: () -> Unit,
+    currentLocation: LatLong?
 ){
     val viewModel = viewModel<PrevGeralViewModel>{
         PrevGeralViewModel(
             repositoryPrevisao = pegaTempoImp(),
-            repositoryCidade = solicitacoesCidadeImp()
+            repositoryCidade = solicitacoesCidadeImp(),
+            initialLocation = currentLocation
         )
     }
 

@@ -5,8 +5,9 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class LatLong(
-    var longitude: Double,
-    var latitude: Double
+    var latitude: Double,
+    var longitude: Double
+
 
 )
 

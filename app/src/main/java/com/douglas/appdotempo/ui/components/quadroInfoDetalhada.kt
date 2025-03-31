@@ -43,7 +43,7 @@ fun quadroInfoDetalhada(
                 shape = RoundedCornerShape(30.dp)
             )
             .padding(10.dp, 15.dp)
-            .fillMaxHeight()
+            //.fillMaxHeight()
     ) {
         Row(
             modifier = Modifier
@@ -129,7 +129,7 @@ fun ListaPrevisoes(previsoesHora: List<Previsao>) {
     LazyColumn(
         modifier = Modifier
             .fillMaxWidth()
-            .height(300.dp) // Defina uma altura fixa para a rolagem
+            //.height(300.dp) // Defina uma altura fixa para a rolagem
     ) {
         items(previsoesHora){ previsaoItem ->
             CardResumoHora(

@@ -1,6 +1,7 @@
 package com.douglas.appdotempo.data
 
 import android.annotation.SuppressLint
+import android.util.Log
 import androidx.compose.ui.text.intl.Locale
 import io.ktor.client.*
 import io.ktor.client.engine.cio.*
@@ -86,6 +87,7 @@ class pegaTempoImp : pegaTempo {
             print("Erro de requisição : ${respond1.status}")
             return null
         }
+        Log.d("Querendo","https://api.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitude&appid=$api&lang=pt_br&units=metric")
         val jsonObj1 = JSONArray(respond1.bodyAsText())
         val city = jsonObj1.getJSONObject(0).getString("name")
 
