@@ -1,13 +1,14 @@
 package com.douglas.appdotempo.ui.components
 
-import android.graphics.Color
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -20,6 +21,7 @@ import com.douglas.appdotempo.domain.Previsao
 import com.douglas.appdotempo.domain.previsao1
 import com.douglas.appdotempo.domain.previsao2
 import com.douglas.appdotempo.domain.previsao3
+import com.douglas.appdotempo.domain.previsao4
 import com.douglas.appdotempo.ui.theme.AppDoTempoTheme
 import com.douglas.appdotempo.ui.theme.azul_temp
 import com.douglas.appdotempo.ui.theme.branco_mais_claro
@@ -27,6 +29,7 @@ import com.douglas.appdotempo.ui.theme.vermelho_temp
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+import androidx.compose.foundation.lazy.items
 
 @Composable
 fun quadroInfoDetalhada(
@@ -98,18 +101,9 @@ fun quadroInfoDetalhada(
                 )
 
             }
-        }
 
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(10.dp)
-        ) {
-
-            previsoesHora.forEach { previsaoItem ->
-                CardResumoHora(hora = "9:00", previsao = previsaoItem)
-            }
         }
+        ListaPrevisoes(previsoesHora)
     }
 }
 
@@ -123,10 +117,28 @@ fun quadroInfoDetalhadaPrev() {
                 previsao1,
                 previsao2,
                 previsao3,
-                previsao1,
-                previsao2
+                previsao4
             )
 
         )
     }
 }
+
+@Composable
+fun ListaPrevisoes(previsoesHora: List<Previsao>) {
+    LazyColumn(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(300.dp) // Defina uma altura fixa para a rolagem
+    ) {
+        items(previsoesHora){ previsaoItem ->
+            CardResumoHora(
+                hora = "9:00",
+                previsao = previsaoItem
+            )
+        }
+    }
+}
+
+
+

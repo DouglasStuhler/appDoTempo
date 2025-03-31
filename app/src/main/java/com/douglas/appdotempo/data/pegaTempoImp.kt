@@ -48,8 +48,8 @@ class pegaTempoImp : pegaTempo {
         val umidade = main.getString("humidity")
         val vel_vento = jsonObj.getJSONObject("wind").getString("speed")
         val chuva = jsonObj.getJSONObject("clouds").getString("all")
-        val desc = jsonObj.getJSONArray("weather").getJSONObject(2).getString("description")
-        val icon = jsonObj.getJSONArray("weather").getJSONObject(2).getString("icon")
+        val desc = jsonObj.getJSONArray("weather").getJSONObject(0).getString("description")
+        val icon = jsonObj.getJSONArray("weather").getJSONObject(0).getString("icon")
 
         return Previsao(
             date = data_time,
@@ -69,7 +69,8 @@ class pegaTempoImp : pegaTempo {
     override suspend fun getTempoLatLong(latitude: Double, longitude: Double) : Previsao?{
         val cliente = HttpClient(CIO)
         val respond: HttpResponse =
-            cliente.get("https://api.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitude&appid=$api&lang=pt_br&units=metric")
+            cliente.get(
+                "https://api.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitude&appid=$api&lang=pt_br&units=metric")
 
         if(respond.status.value !in  200..299){
             print("Erro de requisição : ${respond.status}")
@@ -78,7 +79,8 @@ class pegaTempoImp : pegaTempo {
         }
 
         val respond1: HttpResponse =
-            cliente.get("http://api.openweathermap.org/geo/1.0/reverse?lat=$latitude&lon=$longitude&appid=$api&lang=pt_br&limit=5")
+            cliente.get(
+                "http://api.openweathermap.org/geo/1.0/reverse?lat=$latitude&lon=$longitude&appid=$api&lang=pt_br&limit=5")
 
         if(respond1.status.value !in  200..299){
             print("Erro de requisição : ${respond1.status}")
@@ -130,7 +132,8 @@ class pegaTempoImp : pegaTempo {
         var previsoes = mutableListOf<Previsao>()
         val cliente = HttpClient(CIO)
         val respond: HttpResponse =
-            cliente.get("https://api.openweathermap.org/data/2.5/forecast/daily?q=$cidade&appid=$api&lang=pt_br&units=metric&cnt=7")
+            cliente.get(
+                "https://api.openweathermap.org/data/2.5/forecast/daily?q=$cidade&appid=$api&lang=pt_br&units=metric&cnt=7")
 
         if(respond.status.value !in  200..299){
             print("Erro de requisição : ${respond.status}")
@@ -172,7 +175,7 @@ class pegaTempoImp : pegaTempo {
                 velocidadeVento = vel_vento,
                 chuvaPorc = chuva,
                 desc = desc,
-                cidade = "",
+                cidade = cidade,
                 icon = icon
             ))
         }

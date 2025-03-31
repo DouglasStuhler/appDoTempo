@@ -27,6 +27,10 @@ fun LabelDetalhado(
     cidade: String,
     previsao: Previsao
 ){
+    var tempAtual = previsao.tempAtual
+    if(tempAtual.indexOf('.') != -1){
+        tempAtual = tempAtual.substring(0, tempAtual.indexOf('.'))
+    }
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -63,7 +67,7 @@ fun LabelDetalhado(
                     .size(120.dp)
             )
             Text(
-                text = previsao.tempAtual.toString()+"°",
+                text = tempAtual.toString()+"°",
                 modifier = Modifier
                     .weight(1f),
                 fontSize = 80.sp,

@@ -32,8 +32,18 @@ import com.douglas.appdotempo.ui.theme.vermelho_temp
 @Composable
 fun CardResumoHora(
     hora: String,
-    previsao: Previsao
+    previsao: Previsao,
 ){
+    var tempMax = previsao.tempMax
+    if(tempMax.indexOf('.') != -1){
+        tempMax = tempMax.substring(0, tempMax.indexOf('.'))
+    }
+
+    var tempMin = previsao.tempMin
+    if(tempMin.indexOf('.') != -1){
+        tempMin = tempMin.substring(0, tempMin.indexOf('.'))
+    }
+
     Row (
         modifier = Modifier
             .fillMaxWidth()
@@ -76,12 +86,13 @@ fun CardResumoHora(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = previsao.tempMax.toString()+"°",
+
+                text = tempMax.toString()+"°",
                 fontSize = 18.sp,
                 color = vermelho_temp
             )
             Text(
-                text = previsao.tempMin.toString()+"°",
+                text = tempMin.toString()+"°",
                 fontSize = 18.sp,
                 color = azul_temp
             )
@@ -95,7 +106,7 @@ fun CardResumoHoraPrev() {
     AppDoTempoTheme {
         CardResumoHora(
             hora = "9:00",
-            previsao = previsao1
+            previsao = previsao1,
         )
     }
 }
