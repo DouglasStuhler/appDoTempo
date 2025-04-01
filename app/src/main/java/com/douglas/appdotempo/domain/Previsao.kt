@@ -14,7 +14,7 @@ data class Previsao(
 )
 
 var previsao1 = Previsao(
-    date = "31-03-2025",
+    date = "31/03/2025",
     tempMax = "35",
     tempMin = "20",
     tempAtual = "28",
@@ -27,7 +27,7 @@ var previsao1 = Previsao(
 )
 
 var previsao2 = Previsao(
-    date = "31-03-2025",
+    date = "31/03/2025",
     tempMax = "35",
     tempMin = "20",
     tempAtual = "28",
@@ -41,7 +41,7 @@ var previsao2 = Previsao(
 
 
 var previsao3 = Previsao(
-    date = "31-03-2025",
+    date = "31/03/2025",
     tempMax = "35",
     tempMin = "20",
     tempAtual = "28",
@@ -54,7 +54,7 @@ var previsao3 = Previsao(
 )
 
 var previsao4 = Previsao(
-    date = "31-03-2025",
+    date = "31/03/2025",
     tempMax = "35",
     tempMin = "20",
     tempAtual = "28",
