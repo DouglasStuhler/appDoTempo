@@ -5,6 +5,7 @@ import android.widget.ImageView
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -31,12 +32,14 @@ import com.douglas.appdotempo.R
 import com.douglas.appdotempo.domain.Previsao
 import com.douglas.appdotempo.domain.previsao1
 import com.douglas.appdotempo.domain.previsao2
+import com.douglas.appdotempo.ui.features.prevgeral.PrevGeralEvent
 import com.douglas.appdotempo.ui.theme.AppDoTempoTheme
 import com.douglas.appdotempo.ui.theme.*
 
 @Composable
 fun resumoPrev(
-    previsao: Previsao
+    previsao: Previsao,
+    onClick: (PrevGeralEvent) -> Unit
 ){
     var tempAtual = previsao.tempAtual
     if(tempAtual.indexOf('.') != -1){
@@ -65,6 +68,9 @@ fun resumoPrev(
     Column (
         modifier = Modifier
             .fillMaxWidth()
+            .clickable {
+                onClick(PrevGeralEvent.onClickCidade(previsao.cidade))
+            }
     ) {
         Row (
             modifier = Modifier
@@ -74,15 +80,6 @@ fun resumoPrev(
             Column(
                 modifier = Modifier
                     .weight(6f)
-                    /*.border(
-                        width = 2.dp,
-                        color = cinza_nuvem,
-                        shape = RoundedCornerShape(20.dp)
-                    )*/
-                    /*.background(
-                        color = transparente,
-                        shape = RoundedCornerShape(20.dp)
-                    )*/
                     .padding(10.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ){
@@ -179,7 +176,8 @@ fun resumoPrev(
 fun resumoPrevPrev(){
     AppDoTempoTheme {
         resumoPrev(
-            previsao = previsao2
+            previsao = previsao2,
+            onClick = {}
         )
     }
 }

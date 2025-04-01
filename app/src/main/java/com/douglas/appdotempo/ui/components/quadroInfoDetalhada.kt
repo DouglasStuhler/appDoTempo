@@ -43,21 +43,28 @@ fun quadroInfoDetalhada(
                 shape = RoundedCornerShape(30.dp)
             )
             .padding(10.dp, 15.dp)
-            //.fillMaxHeight()
     ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth(),
             horizontalArrangement = Arrangement.Center
         ){
-            val data = Date()
-            val local = Locale("pt", "BR")
-            val formato = SimpleDateFormat("EEEE, dd 'de' MMMM 'de' yyyy", local)
 
-            Text(
-                text = formato.format(data),
-                fontSize = 18.sp
-            )
+            if(previsao.date == null){
+                val data = Date()
+                val local = Locale("pt", "BR")
+                val formato = SimpleDateFormat("'Dia:' dd '/' MMMM '/' yyyy", local)
+
+                Text(
+                    text = formato.format(data),
+                    fontSize = 18.sp
+                )
+            } else {
+                Text(
+                    text = "Dia: "+previsao.date.substring(0,10),
+                    fontSize = 18.sp
+                )
+            }
         }
 
         Row(
@@ -67,25 +74,25 @@ fun quadroInfoDetalhada(
         ){
             Column (
                 modifier = Modifier
-                    .weight(1f)
+                    .weight(1.2f)
                     .padding(10.dp)
             ) {
                 Text(
-                    text = "Umidade: ${previsao.umidade}",
+                    text = "Umidade: ${previsao.umidade}%",
                     fontSize = 18.sp
                 )
                 Text(
-                    text = "Chuva: ${previsao.chuvaPorc}",
+                    text = "Chuva: ${previsao.chuvaPorc}%",
                     fontSize = 18.sp
                 )
                 Text(
-                    text = "Vel. Vento: ${previsao.velocidadeVento}",
+                    text = "Vel. Vento: ${previsao.velocidadeVento} m/s",
                     fontSize = 18.sp
                 )
             }
             Column (
                 modifier = Modifier
-                    .weight(1f)
+                    .weight(.8f)
                     .padding(10.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
@@ -129,7 +136,6 @@ fun ListaPrevisoes(previsoesHora: List<Previsao>) {
     LazyColumn(
         modifier = Modifier
             .fillMaxWidth()
-            //.height(300.dp) // Defina uma altura fixa para a rolagem
     ) {
         items(previsoesHora){ previsaoItem ->
             CardResumoHora(

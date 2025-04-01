@@ -1,9 +1,11 @@
 package com.douglas.appdotempo.ui.features.prevgeral
 
+import DetalhesCidadeRoute
 import ListPaisesRoute
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
@@ -27,7 +29,8 @@ import com.douglas.appdotempo.ui.theme.cinza_nuvem
 @Composable
 fun prevGeralScreen(
     navigateToPaises: () -> Unit,
-    currentLocation: LatLong?
+    currentLocation: LatLong?,
+    navigateToCidade: (String) -> Unit
 ){
     val viewModel = viewModel<PrevGeralViewModel>{
         PrevGeralViewModel(
@@ -48,6 +51,9 @@ fun prevGeralScreen(
                         is ListPaisesRoute -> {
                             navigateToPaises()
                         }
+                        is DetalhesCidadeRoute -> {
+                            navigateToCidade(viewModel.cidade)
+                        }
                     }
                 }
 
@@ -57,11 +63,13 @@ fun prevGeralScreen(
         }
     }
 
-    PainelPrevGeral(
-        previsao = previsao?: previsao1,
-        previsoes = previsoes,
-        onClick = viewModel::onEvent
-    )
+    previsao?.let{
+        PainelPrevGeral(
+            previsao = previsao,
+            previsoes = previsoes,
+            onClick = viewModel::onEvent
+        )
+    }
 }
 
 @Composable
@@ -74,7 +82,7 @@ fun PainelPrevGeral(
     var corFundo = when(previsao.icon){
         "01d" -> azul_dia
         "02d" -> azul_dia
-        "03d" -> cinza_nuvem
+        "03d" -> azul_dia
         "04d" -> cinza_dia_nublado
         "09d" -> cinza_dia_nublado
         "10d" -> cinza_dia_nublado
@@ -114,20 +122,12 @@ fun PainelPrevGeral(
     Column (
         modifier = Modifier
             .background(
-                /*brush = Brush.verticalGradient(
-                    colors = listOf(
-                        corFundo,
-                        Color.White
-                    ),
-                    startY = 0f,
-                    endY = 3000f
-                )*/
                 color = corFundo
             )
             .fillMaxHeight()
     ) {
         labelDiaAtual(previsao.cidade, onClickGeral = onClick)
-        resumoPrev(previsao)
+        resumoPrev(previsao, onClick)
         cardCarrousel(previsoes)
     }
 }

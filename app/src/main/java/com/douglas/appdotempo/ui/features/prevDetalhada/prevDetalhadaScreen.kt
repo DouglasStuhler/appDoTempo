@@ -25,6 +25,9 @@ import com.douglas.appdotempo.ui.components.quadroInfoDetalhada
 import com.douglas.appdotempo.ui.features.listaCidades.ListaCidadesViewModel
 import com.douglas.appdotempo.ui.theme.AppDoTempoTheme
 import com.douglas.appdotempo.ui.theme.azul_dia
+import com.douglas.appdotempo.ui.theme.azul_noite
+import com.douglas.appdotempo.ui.theme.cinza_dia_nublado
+import com.douglas.appdotempo.ui.theme.cinza_nuvem
 
 @Composable
 fun PrevDetalhadaScreen(
@@ -39,21 +42,44 @@ fun PrevDetalhadaScreen(
             repositoryPrevisao = repositoryPrev
         )
     }
-    var previsao = viewModel.previsao?: previsao1
+    var previsao = viewModel.previsao
     var previsoes = viewModel.previsoes
 
-    Column (
-        modifier = Modifier
-            .fillMaxWidth()
-            .background(
-                color = azul_dia
-            )
-            .padding(10.dp)
-    ) {
+    previsao?.let{
+        var corFundo = when(previsao.icon){
+            "01d" -> azul_dia
+            "02d" -> azul_dia
+            "03d" -> azul_dia
+            "04d" -> cinza_dia_nublado
+            "09d" -> cinza_dia_nublado
+            "10d" -> cinza_dia_nublado
+            "11d" -> cinza_dia_nublado
+            "13d" -> cinza_dia_nublado
+            "01n" -> azul_noite
+            "02n" -> azul_noite
+            "03n" -> azul_noite
+            "04n" -> azul_noite
+            "09n" -> cinza_nuvem
+            "10n" -> cinza_nuvem
+            "11n" -> cinza_nuvem
+            "13n" -> cinza_nuvem
+            else -> azul_dia
+        }
 
-        LabelDetalhado(cidade, previsao)
-        quadroInfoDetalhada(previsao, previsoes)
+        Column (
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(
+                    color = corFundo
+                )
+                .padding(10.dp)
+        ) {
+
+            LabelDetalhado(cidade, previsao)
+            quadroInfoDetalhada(previsao, previsoes)
+        }
     }
+
 }
 
 @Composable

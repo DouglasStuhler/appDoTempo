@@ -40,6 +40,9 @@ fun AppTempoNavHost(currentLocation: LatLong?) {
                 currentLocation = currentLocation,
                 navigateToPaises = {
                     navController.navigate(ListPaisesRoute)
+                },
+                navigateToCidade = { nomeCidade ->
+                    navController.navigate(DetalhesCidadeRoute(nomeCidade = nomeCidade))
                 }
             )
         }

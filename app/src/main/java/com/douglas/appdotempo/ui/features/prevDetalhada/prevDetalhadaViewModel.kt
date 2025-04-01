@@ -27,8 +27,8 @@ class prevDetalhadaViewModel(
 
     init {
         viewModelScope.launch {
-            previsao = repositoryPrevisao.getTempoCidade(cidade)
             previsoes = repositoryPrevisao.previsoesCidade(cidade)
+            previsao = repositoryPrevisao.getTempoCidade(cidade)
         }
     }
 }

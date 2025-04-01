@@ -1,5 +1,6 @@
 package com.douglas.appdotempo.ui.features.prevgeral
 
+import DetalhesCidadeRoute
 import ListPaisesRoute
 import android.annotation.SuppressLint
 import android.util.Log
@@ -38,17 +39,12 @@ class PrevGeralViewModel (
     var previsoes by mutableStateOf(emptyList<Previsao>())
         private set
 
-    //@SuppressLint("MissingPermission")
-    //var latLong = MainActivity().getloc()
 
+    var cidade by mutableStateOf("")
+        private set
 
     init {
         viewModelScope.launch {
-
-
-
-            Log.d("Abacaxi", "$initialLocation")
-
             initialLocation?.let{ location ->
                 updateLocation(location)
             }?: run {
@@ -56,38 +52,6 @@ class PrevGeralViewModel (
                     updateLocation(defaultLocation)
                 }
             }
-            /*
-
-            loc?.let { location ->
-
-                try {
-
-                    val  previsaoAtual = repositoryPrevisao.getTempoLatLong(location.latitude, location.longitude)
-
-                    previsao = previsaoAtual
-
-                    previsao?.cidade?.let{ cidade ->
-                        val listaPrevisoes = repositoryPrevisao.previsoesCidade(cidade)
-                        previsoes = listaPrevisoes
-                    }
-                }catch (e: Exception){
-                    Log.e("PrevGeralViewModel", "Erro ao buscar previsão", e)
-                    _uiEvent.send(UIEvent.ShowError("Erro ao obter dados Meteoorologicos"))
-                }
-
-            }
-            //var latLong = MainActivity().getloc()
-            loc = latLong?.let {
-                listOf(it.latitude, it.longitude)
-            }*/
-            /*
-            loc = listOf(-18.9113, -48.2622)
-            Log.d("teste", loc.toString())
-            previsao = repositoryPrevisao.getTempoLatLong(loc?.get(0) ?: 0.0, loc?.get(1) ?: 0.0)
-            Log.d("teste", loc.toString())
-            previsoes = repositoryPrevisao.previsoesCidade(previsao!!.cidade)
-
-             */
         }
     }
 
@@ -97,13 +61,13 @@ class PrevGeralViewModel (
             try {
                 newLocation.let { location ->
                     previsao = repositoryPrevisao.getTempoLatLong(location.latitude, location.longitude)
-                    Log.d("Abacaxi","$previsao")
+
                     previsao?.cidade?.let { cidade ->
                         previsoes = repositoryPrevisao.previsoesCidade(cidade)
                     }
                 }
             } catch (e: Exception) {
-                Log.e("PrevGeralViewModel", "Erro ao atualizar previsão", e)
+
                 _uiEvent.send(UIEvent.ShowError("Erro ao atualizar localização"))
             }
         }
@@ -114,6 +78,12 @@ class PrevGeralViewModel (
             is PrevGeralEvent.onClick -> {
                 viewModelScope.launch {
                     _uiEvent.send(UIEvent.Navigate(ListPaisesRoute))
+                }
+            }
+            is PrevGeralEvent.onClickCidade -> {
+                viewModelScope.launch {
+                    cidade = event.cidade?: ""
+                    _uiEvent.send(UIEvent.Navigate(DetalhesCidadeRoute(previsao!!.cidade)))
                 }
             }
         }
