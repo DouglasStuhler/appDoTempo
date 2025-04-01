@@ -18,7 +18,80 @@ class pegaTempoImp : pegaTempo {
     var api : String = "c0e53cc66fcae6540aa61e92c4441051"
 
     @SuppressLint("DefaultLocale")
-    override suspend fun getTempoCidade(cidade: String) : Previsao?{
+    override suspend fun getTempoHorario(cidadea: String): List<Previsao>{
+
+        var cidade = cidadea
+        if (cidadea.indexOf(" ") != -1)
+            cidade = cidadea.replace(" ", "%20")
+
+        var previsoesHoras = mutableListOf<Previsao>()
+
+
+        val client = HttpClient(CIO)
+
+        val respond : HttpResponse =
+            client.get("https://pro.openweathermap.org/data/2.5/forecast/hourly?q=$cidade&lang=pt_br&appid=$api&cnt=7&units=metric")
+        if (respond.status.value !in 200..299){
+            print("Erro de requisição : ${respond.status}")
+
+            return previsoesHoras
+        }
+
+        val jsonObj = JSONObject(respond.bodyAsText())
+        val list = jsonObj.getJSONArray("list")
+        val tempList = mutableListOf<JSONObject>()
+
+        for (i in 0 until list.length())
+            tempList.add(list.getJSONObject(i))
+
+        tempList.forEach{ elemento ->
+            val main = elemento.getJSONObject("main")
+            val fistWeather = elemento.getJSONArray("weather").getJSONObject(0)
+
+            val temp = main.getString("temp")
+            val temp_min = main.getString("temp_min")
+            val temp_max = main.getString("temp_max")
+            val humidity = main.getString("humidity")
+
+            val desc = fistWeather.getString("description")
+            val icon = fistWeather.getString("icon")
+
+            val clouds = elemento.getJSONObject("clouds").getString("all")
+
+            val vento = elemento.getJSONObject("wind").getString("speed")
+
+            var date = elemento.getString("dt_txt")
+
+
+            date = date.substring(10, 16)
+
+            previsoesHoras.add(Previsao(
+                date = date,
+                tempMax = temp_max,
+                tempMin = temp_min,
+                tempAtual = temp,
+                umidade = humidity,
+                chuvaPorc = clouds,
+                velocidadeVento = vento,
+                desc = desc,
+                cidade = cidade,
+                icon = icon
+            ))
+
+        }
+
+        return previsoesHoras
+    }
+
+    @SuppressLint("DefaultLocale")
+    override suspend fun getTempoCidade(cidadea: String) : Previsao?{
+
+        var cidade = cidadea
+        if (cidadea.indexOf(" ") != -1)
+            cidade = cidadea.replace(" ", "%20")
+
+        if (cidade.indexOf(" ") != -1)
+            cidade.replace(" ", "%20")
         val cliente = HttpClient(CIO)
         val respond: HttpResponse =
             cliente.get("https://api.openweathermap.org/data/2.5/weather?q=$cidade&appid=$api&lang=pt_br&units=metric")
@@ -130,9 +203,17 @@ class pegaTempoImp : pegaTempo {
         )
     }
 
-    override suspend fun previsoesCidade(cidade: String) : List<Previsao>{
+    override suspend fun previsoesCidade(cidadea: String) : List<Previsao>{
+
+        var cidade = cidadea
+        if (cidadea.indexOf(" ") != -1)
+            cidade = cidadea.replace(" ", "%20")
+
+        Log.d("Outro","$cidade")
         var previsoes = mutableListOf<Previsao>()
         val cliente = HttpClient(CIO)
+
+        Log.d("Outro", "https://api.openweathermap.org/data/2.5/forecast/daily?q=$cidade&appid=$api&lang=pt_br&units=metric&cnt=7")
         val respond: HttpResponse =
             cliente.get(
                 "https://api.openweathermap.org/data/2.5/forecast/daily?q=$cidade&appid=$api&lang=pt_br&units=metric&cnt=7")

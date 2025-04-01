@@ -139,7 +139,7 @@ fun ListaPrevisoes(previsoesHora: List<Previsao>) {
     ) {
         items(previsoesHora){ previsaoItem ->
             CardResumoHora(
-                hora = "9:00",
+                hora = previsaoItem.date,
                 previsao = previsaoItem
             )
         }
